@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Teaching materials - 6&nbsp; Statistics Application</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./failureRate.html" rel="next">
+<link href="./hypothesis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content=".">
+<script src="site_libs/quarto-contrib/shinylive-0.10.8/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="site_libs/quarto-contrib/shinylive-0.10.8/shinylive/run-python-blocks.js" type="module"></script>
+<link href="site_libs/quarto-contrib/shinylive-0.10.8/shinylive/shinylive.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+  #quarto-content h1.title { display: none; }
+</style>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva_EN.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./app.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Teaching materials</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Descriptive Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Descriptiva_EN.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tema4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regresion and correlation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./confidenceIntervals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Confidence intervals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hypothesis testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Reliability</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./failureRate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Failure rate</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./systemReliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System reliability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coherentSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coherent systems</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reliability_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reliability application</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./redundancy_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redundancy application</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Quality Control</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./toleranceLimits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Tolerance limits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./controlCharts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control charts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./operatingCharacteristicCurve.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Operate characterisctic curve</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qualityControl_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control application</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva_EN.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./app.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 1000
+
+library(shiny)
+library(shinydashboard)
+library(haven)
+library(moments)
+library(ggplot2)
+library(readxl)
+library(shinyjs)
+library(BSDA)
+# =========================
+# FUNCIONES AUXILIARES
+# =========================
+moda &lt;- function(x){
+    ux &lt;- unique(x)
+    ux[which.max(tabulate(match(x, ux)))]
+}
+
+uploadBox &lt;- function(id){
+    ns &lt;- NS(id)
+    box(
+        title = "Data loading", width = 12, status = "primary", solidHeader = TRUE,
+        fileInput(ns("file"), "Select file", accept = c(".csv", ".txt", ".xlsx", ".xls", ".sav")),
+        selectInput(ns("sep"), "Column separator", c("Comma"=",","Semicolon"=";","Tab"="    ")),
+        selectInput(ns("dec"), "Decimal separator", c("Dot"=".","Comma"=",")),
+        checkboxInput(ns("header"), "Header", TRUE),
+        br(),
+        h4("Preview (first 3 rows)"),
+        tableOutput(ns("preview"))
+    )
+}
+
+uploadServer &lt;- function(id){
+    moduleServer(id, function(input, output, session){
+        
+        observe({
+            req(input$file)
+            ext &lt;- tolower(tools::file_ext(input$file$name))
+            disable_opts &lt;- ext %in% c("xlsx", "xls", "sav")
+            
+            shinyjs::toggleState("sep", condition = !disable_opts)
+            shinyjs::toggleState("dec", condition = !disable_opts)
+            shinyjs::toggleState("header", condition = !disable_opts)
+        })
+        data_react &lt;- reactive({
+            req(input$file)
+            ext &lt;- tolower(tools::file_ext(input$file$name))
+            
+            df &lt;- switch(ext,
+                         "sav" = as.data.frame(read_sav(input$file$datapath)),
+                         "xlsx" = as.data.frame(read_excel(input$file$datapath)),
+                         "xls" = as.data.frame(read_excel(input$file$datapath)),
+                         read.table(input$file$datapath,
+                                    sep = input$sep,
+                                    dec = input$dec,
+                                    header = input$header,
+                                    stringsAsFactors = FALSE,
+                                    check.names = FALSE)
+            )
+            
+            # validate(
+            #     need(ncol(df) &gt; 1 || ext %in% c("xlsx","xls","sav"),
+            #          "La estructura de los datos no parece correcta. Revisa separadores y cabecera.")
+            # )
+            
+            validate(
+                need(ncol(df) &gt; 1 || ext %in% c("xlsx","xls","sav"),
+                     "")
+            )
+            
+            as.data.frame(df)
+        })
+        
+        output$preview &lt;- renderTable({
+            req(data_react())
+            head(data_react(), 3)
+        })
+        
+        return(data_react)
+    })
+}
+
+# =========================
+# UI
+# =========================
+ui &lt;- dashboardPage(
+    dashboardHeader(title = "Click &amp; Learn"),
+    dashboardSidebar(
+        sidebarMenu(
+            menuItem("Descriptive Statistics", tabName = "desc", icon = icon("chart-bar")),
+            menuItem("Regression / Correlation", tabName = "reg", icon = icon("chart-line")),
+            menuItem("Confidence Intervals", tabName = "ci", icon = icon("percent")),
+            menuItem("Hypothesis Testing", tabName = "tests", icon = icon("flask"))
+        )
+    ),
+    dashboardBody(
+        useShinyjs(),
+        tabItems(
+            
+            # ========================= DESCRIPTIVAS =========================
+            tabItem(tabName = "desc",
+                    fluidRow(uploadBox("up_desc")),
+                    fluidRow(
+                        box(width = 4, title = "Measures", status = "warning", solidHeader = TRUE,
+                            uiOutput("vars_desc_ui"),
+                            h4("Measures of position"),
+                            checkboxInput("mean", "Mean"),
+                            checkboxInput("median", "Median"),
+                            checkboxInput("mode", "Mode"),
+                            checkboxInput("quart", "Quartiles"),
+                            textInput("percent", "Percentiles", placeholder = "20,50,80"),
+                            br(),
+                            h4("Measures of dispersion"),
+                            checkboxInput("min", "Minimum"),
+                            checkboxInput("max", "Maximum"),
+                            checkboxInput("range", "Range"),
+                            checkboxInput("iqr", "Interquartile range"),
+                            checkboxInput("var", "Variance"),
+                            checkboxInput("sd", "Standard deviation"),
+                            checkboxInput("cv", "Coefficient of variation"),
+                            br(),
+                            h4("Measures of Shape"),
+                            checkboxInput("skew", "Skewness"),
+                            checkboxInput("kurt", "Kurtosis"),
+                            br(),
+                            h4("Graphical representations"),
+                            checkboxInput("show_hist", "Histogram"),
+                            checkboxInput("normal", "Overlay Normal curve"),
+                            checkboxInput("show_box", "Boxplot")
+                        ),
+                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                            tableOutput("tabla_desc"),
+                            br(),
+                            uiOutput("plots_desc")
+                        )
+                    )
+            ),
+            
+            # ========================= REGRESIÓN =========================
+            tabItem(tabName = "reg",
+                    fluidRow(uploadBox("up_reg")),
+                    fluidRow(
+                        box(width = 4, title = "Regression Fit", status = "warning", solidHeader = TRUE,
+                            
+                            uiOutput("dep_ui"),
+                            uiOutput("indep_ui"),
+                            
+                            br(),
+                            h4("Model"),
+                            checkboxInput("corr_matrix", "Correlation matrix"),
+                            checkboxInput("corr_test", "Correlation test"),
+                            checkboxInput("cov_matrix", "Variance-Covariance matrix"),
+                            checkboxInput("r2_show", "Coefficient of determination (R²)"),
+                            checkboxInput("show_scatter", "Scatterplot + fit"),
+                            
+                            br(),
+                            h4("Normality Tests"),
+                            checkboxInput("do_shapiro", "Shapiro-Wilk test"),
+                            checkboxInput("do_qq", "Q-Q plot")
+                        ),
+                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                            tableOutput("reg_table"),
+                            br(),
+                            tableOutput("r2_table"),
+                            br(),
+                            tableOutput("corr_table"),
+                            br(),
+                            tableOutput("cov_table"),
+                            br(),
+                            tableOutput("corr_test_table"),
+                            br(),
+                            tableOutput("shapiro_table"),
+                            br(),
+                            uiOutput("qq_ui"),
+                            br(),
+                            plotOutput("scatter_plot")
+                        )
+                    )
+            ),
+            
+            # ========================= IC =========================
+            tabItem(tabName = "ci",
+                    fluidRow(uploadBox("up_ci")),
+                    fluidRow(
+                        box(width = 4, title = "Confidence Intervals", status = "warning", solidHeader = TRUE,
+                            
+                            uiOutput("vars_ci_ui"),
+                            uiOutput("group_var_ui"),
+                            
+                            br(),
+                            #h4("Intervalos de confianza"),
+                            
+                            checkboxInput("ci_mean", "Mean CI"),
+                            checkboxInput("ci_var", "Variance CI"),
+                            checkboxInput("ci_diff", "Means difference CI"),
+                            checkboxInput("ci_ratio_var", "Variances ratio CI"),
+                            
+                            numericInput("conf_level", "Confidence level (%)", 95, min = 1, max = 99.9)
+                        ),
+                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                            tableOutput("ci_meanvar_table"),
+                            br(),
+                            tableOutput("ci_diff_table"),
+                            br(),
+                            tableOutput("ci_ratio_table")
+                        )
+                    )
+            ),
+            
+            # ========================= TESTS =========================
+            tabItem(tabName = "tests",
+                    fluidRow(uploadBox("up_test")),
+                    fluidRow(
+                        box(width = 4, title = "Hypothesis tests", status = "warning", solidHeader = TRUE,
+                            
+                            uiOutput("vars_test_ui"),
+                            uiOutput("group_test_ui"),
+                            
+                            br(),
+                            h4("Normality Tests"),
+                            checkboxInput("test_shapiro", "Shapiro-Wilk test"),
+                            checkboxInput("test_qq", "Q-Q plot"),
+                            
+                            br(),
+                            h4("Parametric Tests"),
+                            
+                            textInput("mu_test", "Hypothesized mean", placeholder = "10"),
+                            textInput("var_test", "Hypothesized variance", placeholder = "5"),
+                            
+                            checkboxInput("t1", "One-sample t-test"),
+                            checkboxInput("var1", "Variance test"),
+                            checkboxInput("var_ratio", "Variances ratio test"),
+                            checkboxInput("t_indep", "Independent samples t-test"),
+                            checkboxInput("welch", "Welch test"),
+                            
+                            br(),
+                            h4("Non-parametric Tests"),
+                            
+                            textInput("median_test", "Hypothesized median", placeholder = "10"),
+                            
+                            checkboxInput("sign_test", "Sign test"),
+                            checkboxInput("mw", "Mann-Whitney test"),
+                            checkboxInput("ks", "Kolmogorov-Smirnov test")
+                        ),
+                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                            
+                            tableOutput("param_table"),
+                            br(),
+                            tableOutput("var_ratio_table"),
+                            br(),
+                            tableOutput("t_indep_table"),
+                            br(),
+                            tableOutput("welch_table"),
+                            br(),
+                            tableOutput("sign_table"),
+                            br(),
+                            tableOutput("mw_table"),
+                            br(),
+                            tableOutput("ks_table"),
+                            br(),
+                            tableOutput("shapiro_test_table"),
+                            br(),
+                            uiOutput("qq_test_ui")
+                        )
+                    )
+            )
+        )
+    )
+)
+
+# ========================= SERVER
+# =========================
+server &lt;- function(input, output, session){
+    
+    data_desc &lt;- uploadServer("up_desc")
+    data_reg  &lt;- uploadServer("up_reg")
+    data_ci   &lt;- uploadServer("up_ci")
+    data_test &lt;- uploadServer("up_test")
+    
+    # ---------- DESCRIPTIVAS ----------
+    output$vars_desc_ui &lt;- renderUI({
+        req(data_desc())
+        req(data_desc())
+        nums &lt;- names(data_desc())[sapply(data_desc(), is.numeric)]
+        selectInput("vars_desc", "Variables", nums, multiple = TRUE)
+    })
+    
+    observe({
+        if(isTRUE(input$show_hist)){
+            shinyjs::enable("normal")
+        } else {
+            shinyjs::disable("normal")
+            updateCheckboxInput(session, "normal", value = FALSE)
+        }
+    })
+    
+    output$tabla_desc &lt;- renderTable({
+        req(input$vars_desc)
+        df &lt;- data_desc()
+        res &lt;- list()
+        percentiles &lt;- if(nchar(input$percent)&gt;0) as.numeric(strsplit(input$percent,",")[[1]]) else NULL
+        
+        for(v in input$vars_desc){
+            x &lt;- na.omit(df[[v]])
+            tmp &lt;- c()
+            if(input$mean) tmp['Mean'] &lt;- mean(x)
+            if(input$median) tmp['Median'] &lt;- median(x)
+            if(input$mode) tmp['Mode'] &lt;- moda(x)
+            if(input$quart){
+                q &lt;- quantile(x, c(.25,.5,.75))
+                tmp['Q1'] &lt;- q[1]; tmp['Q2'] &lt;- q[2]; tmp['Q3'] &lt;- q[3]
+            }
+            if(!is.null(percentiles)){
+                q &lt;- quantile(x, percentiles/100)
+                for(i in seq_along(q)) tmp[paste0('P', percentiles[i])] &lt;- q[i]
+            }
+            if(input$min) tmp['Minimum'] &lt;- min(x)
+            if(input$max) tmp['Maximum'] &lt;- max(x)
+            if(input$range) tmp['Range'] &lt;- max(x) - min(x)
+            if(input$iqr) tmp['Interquartile range'] &lt;- IQR(x)
+            if(input$var) tmp['Variance'] &lt;- var(x)
+            if(input$sd) tmp['SD'] &lt;- sd(x)
+            if(input$cv) tmp['Coeff. variation'] &lt;- sd(x)/mean(x)
+            if(input$skew) tmp['Skewness'] &lt;- skewness(x)
+            if(input$kurt) tmp['Kurtosis'] &lt;- kurtosis(x)
+            res[[v]] &lt;- tmp
+        }
+        as.data.frame(res)
+    }, rownames = TRUE)
+    
+    output$plots_desc &lt;- renderUI({
+        req(input$vars_desc)
+        
+        graficos &lt;- list()
+        
+        for(v in input$vars_desc){
+            
+            if(input$show_hist){
+                graficos &lt;- append(graficos, list(
+                    plotOutput(paste0("hist_", v), height = 250)
+                ))
+            }
+            
+            if(input$show_box){
+                graficos &lt;- append(graficos, list(
+                    plotOutput(paste0("box_", v), height = 250)
+                ))
+            }
+        }
+        
+        graficos
+    })
+    
+    observe({
+        req(input$vars_desc)
+        
+        df &lt;- data_desc()
+        
+        for(v in input$vars_desc){
+            
+            local({
+                varname &lt;- v
+                
+                output[[paste0("hist_", varname)]] &lt;- renderPlot({
+                    
+                    req(input$show_hist)
+                    
+                    x &lt;- na.omit(df[[varname]])
+                    
+                    hist(
+                        x,
+                        probability = TRUE,
+                        main = paste("Histogram", varname),
+                        col = "gray80"
+                    )
+                    
+                    if(input$normal){
+                        curve(
+                            dnorm(x, mean(x), sd(x)),
+                            add = TRUE,
+                            col = "red",
+                            lwd = 2
+                        )
+                    }
+                })
+                
+                output[[paste0("box_", varname)]] &lt;- renderPlot({
+                    
+                    req(input$show_box)
+                    
+                    x &lt;- na.omit(df[[varname]])
+                    
+                    boxplot(
+                        x,
+                        horizontal = FALSE,
+                        main = paste("Boxplot", varname)
+                    )
+                })
+            })
+        }
+    })
+    
+    # ---------- REGRESIÓN ----------
+    output$dep_ui &lt;- renderUI({
+        req(data_reg())
+        
+        nums &lt;- names(data_reg())[sapply(data_reg(), is.numeric)]
+        
+        selectInput(
+            "dep_var",
+            "Dependent variable",
+            choices = c("Select variable" = "", nums),
+            selected = ""
+        )
+    })
+    
+    output$indep_ui &lt;- renderUI({
+        req(data_reg(), input$dep_var)
+        
+        nums &lt;- names(data_reg())[sapply(data_reg(), is.numeric)]
+        nums &lt;- nums[nums != input$dep_var]
+        
+        selectInput(
+            "indep_vars",
+            "Independent variable",
+            nums,
+            multiple = TRUE
+        )
+    })
+    
+    observe({
+        if(length(input$indep_vars) == 1){
+            shinyjs::enable("show_scatter")
+        } else {
+            shinyjs::disable("show_scatter")
+            updateCheckboxInput(session, "show_scatter", value = FALSE)
+        }
+    })
+    
+    output$reg_table &lt;- renderTable({
+        req(input$dep_var != "", input$indep_vars)
+        
+        fit &lt;- lm(
+            as.formula(
+                paste(input$dep_var, "~", paste(input$indep_vars, collapse = "+"))
+            ),
+            data = data_reg()
+        )
+        
+        coefs &lt;- as.data.frame(summary(fit)$coefficients)
+        
+        coefs$Coeficiente &lt;- rownames(coefs)
+        rownames(coefs) &lt;- NULL
+        
+        coefs &lt;- coefs[, c(
+            "Coeficiente",
+            "Estimate",
+            "Std. Error",
+            "t value",
+            "Pr(&gt;|t|)"
+        )]
+        
+        names(coefs) &lt;- c(
+            "Coefficient",
+            "Estimate",
+            "Std. error",
+            "t",
+            "p_value"
+        )
+        
+        coefs[, -1] &lt;- round(coefs[, -1], 5)
+        
+        coefs
+    }, rownames = FALSE)
+    
+    output$corr_table &lt;- renderTable({
+        req(input$corr_matrix, input$dep_var, input$indep_vars)
+        
+        vars &lt;- c(input$dep_var, input$indep_vars)
+        
+        round(
+            cor(data_reg()[vars], use = "pairwise.complete.obs"),
+            5
+        )
+        
+    }, rownames = TRUE)
+    
+    output$cov_table &lt;- renderTable({
+        req(input$cov_matrix, input$dep_var != "", input$indep_vars)
+        
+        vars &lt;- c(input$dep_var, input$indep_vars)
+        
+        round(
+            cov(data_reg()[vars], use = "pairwise.complete.obs"),
+            5
+        )
+        
+    }, rownames = TRUE)
+    
+    output$r2_table &lt;- renderTable({
+        req(input$r2_show, input$dep_var != "", input$indep_vars)
+        
+        fit &lt;- lm(
+            as.formula(
+                paste(input$dep_var, "~", paste(input$indep_vars, collapse = "+"))
+            ),
+            data = data_reg()
+        )
+        
+        data.frame(
+            Measure = c("R²", "R² fitted"),
+            Value = round(
+                c(summary(fit)$r.squared,
+                  summary(fit)$adj.r.squared),
+                5
+            )
+        )
+        
+    }, rownames = FALSE)
+    
+    output$corr_test_table &lt;- renderTable({
+        req(input$corr_test, input$dep_var, input$indep_vars)
+        
+        vars &lt;- c(input$dep_var, input$indep_vars)
+        
+        if(length(vars) &lt; 2) return(NULL)
+        
+        cmb &lt;- combn(vars, 2, simplify = FALSE)
+        
+        do.call(rbind, lapply(cmb, function(p){
+            
+            ct &lt;- cor.test(
+                data_reg()[[p[1]]],
+                data_reg()[[p[2]]]
+            )
+            
+            data.frame(
+                Variable_1 = p[1],
+                Variable_2 = p[2],
+                Correlation = round(ct$estimate, 5),
+                p_value = round(ct$p.value, 5)
+            )
+        }))
+        
+    }, rownames = FALSE)
+    
+    output$shapiro_table &lt;- renderTable({
+        req(input$do_shapiro, input$dep_var)
+        
+        vars &lt;- c(input$dep_var, input$indep_vars)
+        
+        do.call(rbind, lapply(vars, function(v){
+            
+            x &lt;- na.omit(data_reg()[[v]])
+            
+            if(length(x) &lt; 3 || length(x) &gt; 5000){
+                return(data.frame(
+                    Variable = v,
+                    W = NA,
+                    p_value = NA
+                ))
+            }
+            
+            sh &lt;- shapiro.test(x)
+            
+            data.frame(
+                Variable = v,
+                W = round(sh$statistic, 5),
+                p_value = round(sh$p.value, 5)
+            )
+        }))
+        
+    }, rownames = FALSE)
+    
+    output$qq_ui &lt;- renderUI({
+        req(input$do_qq, input$dep_var)
+        
+        vars &lt;- c(input$dep_var, input$indep_vars)
+        
+        lapply(vars, function(v){
+            plotOutput(paste0("qq_", v), height = 250)
+        })
+    })
+    
+    observe({
+        req(input$do_qq, input$dep_var)
+        
+        vars &lt;- c(input$dep_var, input$indep_vars)
+        
+        for(v in vars){
+            local({
+                varname &lt;- v
+                
+                output[[paste0("qq_", varname)]] &lt;- renderPlot({
+                    x &lt;- na.omit(data_reg()[[varname]])
+                    
+                    qqnorm(x, main = paste("Q-Q plot:", varname))
+                    qqline(x, col = "red", lwd = 2)
+                })
+            })
+        }
+    })
+    
+    output$scatter_plot &lt;- renderPlot({
+        req(input$show_scatter)
+        req(input$dep_var)
+        
+        if(length(input$indep_vars) != 1) return(NULL)
+        
+        ggplot(
+            data_reg(),
+            aes_string(
+                x = input$indep_vars[1],
+                y = input$dep_var
+            )
+        ) +
+            geom_point() +
+            geom_smooth(method = "lm", se = FALSE, color = "red") +
+            theme_minimal()
+    })
+    
+    # ---------- IC ----------
+    output$vars_ci_ui &lt;- renderUI({
+        req(data_ci())
+        nums &lt;- names(data_ci())[sapply(data_ci(), is.numeric)]
+        selectInput("vars_ci", "Variables", nums, multiple = TRUE)
+    })
+    
+    output$group_var_ui &lt;- renderUI({
+        req(data_ci())
+        
+        df &lt;- data_ci()
+        
+        # variables NO numéricas → factores
+        facs &lt;- names(df)[!sapply(df, is.numeric)]
+        
+        if(length(facs) == 0) return(NULL)
+        
+        selectInput(
+            "group_var",
+            "Grouping variable",
+            choices = c("None" = "", facs),
+            selected = ""
+        )
+    })
+    
+    observe({
+        
+        # número de variables numéricas seleccionadas
+        n_vars &lt;- length(input$vars_ci)
+        
+        # si no hay agrupación
+        no_group &lt;- is.null(input$group_var) || input$group_var == ""
+        
+        # IC diferencia medias
+        if(n_vars &lt; 1 || no_group){
+            shinyjs::disable("ci_diff")
+            updateCheckboxInput(session, "ci_diff", value = FALSE)
+        } else {
+            shinyjs::enable("ci_diff")
+        }
+        
+        # IC cociente varianzas
+        if(n_vars &lt; 1 || no_group){
+            shinyjs::disable("ci_ratio_var")
+            updateCheckboxInput(session, "ci_ratio_var", value = FALSE)
+        } else {
+            shinyjs::enable("ci_ratio_var")
+        }
+    })
+    
+    output$ci_meanvar_table &lt;- renderTable({
+        req(input$vars_ci)
+        
+        conf &lt;- ifelse(is.null(input$conf_level), 0.95, input$conf_level/100)
+        alpha &lt;- 1 - conf
+        
+        res &lt;- list()
+        
+        for(v in input$vars_ci){
+            x &lt;- na.omit(data_ci()[[v]])
+            n &lt;- length(x)
+            m &lt;- mean(x)
+            s2 &lt;- var(x)
+            
+            fila &lt;- data.frame(Variable = v)
+            
+            if(input$ci_mean){
+                tval &lt;- qt(1 - alpha/2, n - 1)
+                li &lt;- m - tval * sqrt(s2/n)
+                ls &lt;- m + tval * sqrt(s2/n)
+                
+                fila$Mean &lt;- round(m,5)
+                fila$LowerL_Mean &lt;- round(li,5)
+                fila$UpperL_Mean &lt;- round(ls,5)
+            }
+            
+            if(input$ci_var){
+                chi1 &lt;- qchisq(alpha/2, n-1)
+                chi2 &lt;- qchisq(1 - alpha/2, n-1)
+                
+                li &lt;- (n-1)*s2/chi2
+                ls &lt;- (n-1)*s2/chi1
+                
+                fila$Variance &lt;- round(s2,5)
+                fila$LowerL_Var &lt;- round(li,5)
+                fila$UpperL_Var &lt;- round(ls,5)
+            }
+            
+            res[[v]] &lt;- fila
+        }
+        
+        do.call(rbind, res)
+    }, rownames = FALSE)
+    
+    
+    output$ci_diff_table &lt;- renderTable({
+        req(input$ci_diff, input$vars_ci, input$group_var)
+        
+        df &lt;- data_ci()
+        g &lt;- as.factor(df[[input$group_var]])
+        
+        if(length(unique(g)) != 2) return(NULL)
+        
+        niveles &lt;- levels(g)
+        conf &lt;- input$conf_level/100
+        alpha &lt;- 1 - conf
+        
+        res &lt;- list()
+        
+        for(v in input$vars_ci){
+            
+            x1 &lt;- na.omit(df[g == niveles[1], v])
+            x2 &lt;- na.omit(df[g == niveles[2], v])
+            
+            n1 &lt;- length(x1); n2 &lt;- length(x2)
+            m1 &lt;- mean(x1); m2 &lt;- mean(x2)
+            s1 &lt;- var(x1); s2 &lt;- var(x2)
+            
+            sp &lt;- ((n1-1)*s1 + (n2-1)*s2)/(n1+n2-2)
+            se &lt;- sqrt(sp*(1/n1 + 1/n2))
+            
+            tval &lt;- qt(1 - alpha/2, n1+n2-2)
+            
+            diff &lt;- m1 - m2
+            
+            li &lt;- diff - tval * se
+            ls &lt;- diff + tval * se
+            
+            res[[v]] &lt;- data.frame(
+                Variable = v,
+                Mean_Group1 = round(m1,5),
+                Mean_Group2 = round(m2,5),
+                Difference = round(diff,5),
+                LowerL = round(li,5),
+                UpperL = round(ls,5)
+            )
+        }
+        
+        do.call(rbind, res)
+    }, rownames = FALSE)
+    
+    
+    output$ci_ratio_table &lt;- renderTable({
+        req(input$ci_ratio_var, input$vars_ci, input$group_var)
+        
+        df &lt;- data_ci()
+        g &lt;- as.factor(df[[input$group_var]])
+        
+        if(length(unique(g)) != 2) return(NULL)
+        
+        niveles &lt;- levels(g)
+        conf &lt;- input$conf_level/100
+        alpha &lt;- 1 - conf
+        
+        res &lt;- list()
+        
+        for(v in input$vars_ci){
+            
+            x1 &lt;- na.omit(df[g == niveles[1], v])
+            x2 &lt;- na.omit(df[g == niveles[2], v])
+            
+            n1 &lt;- length(x1); n2 &lt;- length(x2)
+            s1 &lt;- var(x1); s2 &lt;- var(x2)
+            
+            ratio &lt;- s1/s2
+            
+            f1 &lt;- qf(alpha/2, n1-1, n2-1)
+            f2 &lt;- qf(1 - alpha/2, n1-1, n2-1)
+            
+            li &lt;- ratio / f2
+            ls &lt;- ratio / f1
+            
+            res[[v]] &lt;- data.frame(
+                Variable = v,
+                Var_Group1 = round(s1,5),
+                Var_Group2 = round(s2,5),
+                Ratio = round(ratio,5),
+                LowerL = round(li,5),
+                UpperL = round(ls,5)
+            )
+        }
+        
+        do.call(rbind, res)
+    }, rownames = FALSE)
+    
+    
+    # ---------- TESTS ----------
+    output$vars_test_ui &lt;- renderUI({
+        req(data_test())
+        nums &lt;- names(data_test())[sapply(data_test(), is.numeric)]
+        selectInput("vars_test", "Variables", nums, multiple = TRUE)
+    })
+    
+    output$group_test_ui &lt;- renderUI({
+        req(data_test())
+        
+        df &lt;- data_test()
+        facs &lt;- names(df)[!sapply(df, is.numeric)]
+        
+        if(length(facs) == 0) return(NULL)
+        
+        selectInput(
+            "group_test",
+            "Grouping variable",
+            choices = c("None" = "", facs),
+            selected = ""
+        )
+    })
+    
+    observe({
+        
+        n_vars &lt;- length(input$vars_test)
+        no_group &lt;- is.null(input$group_test) || input$group_test == ""
+        
+        # Paramétricos con grupos
+        if(n_vars &lt; 1 || no_group){
+            shinyjs::disable("var_ratio")
+            shinyjs::disable("t_indep")
+            shinyjs::disable("welch")
+            
+            updateCheckboxInput(session, "var_ratio", value = FALSE)
+            updateCheckboxInput(session, "t_indep", value = FALSE)
+            updateCheckboxInput(session, "welch", value = FALSE)
+        } else {
+            shinyjs::enable("var_ratio")
+            shinyjs::enable("t_indep")
+            shinyjs::enable("welch")
+        }
+        
+        # No paramétrico MW
+        if(n_vars &lt; 1 || no_group){
+            shinyjs::disable("mw")
+            updateCheckboxInput(session, "mw", value = FALSE)
+        } else {
+            shinyjs::enable("mw")
+        }
+    })
+    
+    output$param_table &lt;- renderTable({
+        req(input$vars_test)
+        
+        df &lt;- data_test()
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            x &lt;- na.omit(df[[v]])
+            
+            # --- t una muestra ---
+            if(input$t1){
+                tt &lt;- t.test(x, mu = as.numeric(input$mu_test))
+                
+                out &lt;- rbind(out, data.frame(
+                    Variable = v,
+                    Test = "One-sample t-test",
+                    Statistic = round(tt$statistic, 5),
+                    p_value = round(tt$p.value, 5)
+                ))
+            }
+            
+            # --- test varianza ---
+            if(input$var1){
+                n &lt;- length(x)
+                s2 &lt;- var(x)
+                chi &lt;- (n-1)*s2/as.numeric(input$var_test)
+                
+                pval &lt;- 2 * min(
+                    pchisq(chi, df = n-1),
+                    1 - pchisq(chi, df = n-1)
+                )
+                
+                out &lt;- rbind(out, data.frame(
+                    Variable = v,
+                    Test = "Variance test",
+                    Statistic = round(chi, 5),
+                    p_value = round(pval, 5)
+                ))
+            }
+        }
+        
+        out
+    })
+    
+    output$var_ratio_table &lt;- renderTable({
+        req(input$var_ratio, input$vars_test, input$group_test)
+        
+        df &lt;- data_test()
+        g &lt;- as.factor(df[[input$group_test]])
+        
+        if(length(unique(g)) != 2) return(NULL)
+        
+        niveles &lt;- levels(g)
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            x1 &lt;- na.omit(df[g == niveles[1], v])
+            x2 &lt;- na.omit(df[g == niveles[2], v])
+            
+            ft &lt;- var.test(x1, x2)
+            
+            out &lt;- rbind(out, data.frame(
+                Variable = v,
+                Test = "Variances ratio test",
+                Statistic = round(ft$statistic, 5),
+                p_value = round(ft$p.value, 5)
+            ))
+        }
+        
+        out
+    })
+    
+    output$t_indep_table &lt;- renderTable({
+        req(input$t_indep, input$vars_test, input$group_test)
+        
+        df &lt;- data_test()
+        g &lt;- as.factor(df[[input$group_test]])
+        
+        if(length(unique(g)) != 2) return(NULL)
+        
+        niveles &lt;- levels(g)
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            x1 &lt;- na.omit(df[g == niveles[1], v])
+            x2 &lt;- na.omit(df[g == niveles[2], v])
+            
+            tt &lt;- t.test(x1, x2, var.equal = TRUE)
+            
+            out &lt;- rbind(out, data.frame(
+                Variable = v,
+                Test = "Independent samples test",
+                Statistic = round(tt$statistic, 5),
+                p_value = round(tt$p.value, 5)
+            ))
+        }
+        
+        out
+    })
+    
+    output$welch_table &lt;- renderTable({
+        req(input$welch, input$vars_test, input$group_test)
+        
+        df &lt;- data_test()
+        g &lt;- as.factor(df[[input$group_test]])
+        
+        if(length(unique(g)) != 2) return(NULL)
+        
+        niveles &lt;- levels(g)
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            x1 &lt;- na.omit(df[g == niveles[1], v])
+            x2 &lt;- na.omit(df[g == niveles[2], v])
+            
+            tt &lt;- t.test(x1, x2, var.equal = FALSE)
+            
+            out &lt;- rbind(out, data.frame(
+                Variable = v,
+                Test = "Welch test",
+                Statistic = round(tt$statistic, 5),
+                p_value = round(tt$p.value, 5)
+            ))
+        }
+        
+        out
+    })
+    
+    output$sign_table &lt;- renderTable({
+        req(input$sign_test, input$vars_test)
+        
+        df &lt;- data_test()
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            # x &lt;- na.omit(df[[v]])
+            # 
+            # signs &lt;- sum(x &gt; input$median_test)
+            # n &lt;- length(x)
+            # 
+            # pval &lt;- binom.test(signs, n, 0.5)$p.value
+            
+            x &lt;- na.omit(df[[v]])
+            
+            signs &lt;- sum(x &gt; input$median_test)
+            n &lt;- length(x)
+            
+            pval &lt;- SIGN.test(x, md = as.numeric(input$median_test))$p.value
+            
+            out &lt;- rbind(out, data.frame(
+                Variable = v,
+                Test = "Sign test",
+                Statistic = signs,
+                p_value = round(pval, 5)
+            ))
+        }
+        
+        out
+    })
+    
+    output$mw_table &lt;- renderTable({
+        req(input$mw, input$vars_test, input$group_test)
+        
+        df &lt;- data_test()
+        g &lt;- as.factor(df[[input$group_test]])
+        
+        if(length(unique(g)) != 2) return(NULL)
+        
+        niveles &lt;- levels(g)
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            x1 &lt;- na.omit(df[g == niveles[1], v])
+            x2 &lt;- na.omit(df[g == niveles[2], v])
+            
+            mw &lt;- wilcox.test(x1, x2)
+            
+            out &lt;- rbind(out, data.frame(
+                Variable = v,
+                Test = "Mann-Whitney test",
+                Statistic = round(mw$statistic, 5),
+                p_value = round(mw$p.value, 5)
+            ))
+        }
+        
+        out
+    })
+    
+    output$ks_table &lt;- renderTable({
+        req(input$ks, input$vars_test)
+        
+        df &lt;- data_test()
+        out &lt;- data.frame()
+        
+        for(v in input$vars_test){
+            
+            x &lt;- na.omit(df[[v]])
+            
+            ks &lt;- ks.test(x, "pnorm", mean(x), sd(x))
+            
+            out &lt;- rbind(out, data.frame(
+                Variable = v,
+                Test = "Kolmogorov-Smirnov test",
+                Statistic = round(ks$statistic, 5),
+                p_value = round(ks$p.value, 5)
+            ))
+        }
+        
+        out
+    })
+    
+    output$shapiro_test_table &lt;- renderTable({
+        req(input$test_shapiro, input$vars_test)
+        
+        do.call(rbind, lapply(input$vars_test, function(v){
+            x &lt;- na.omit(data_test()[[v]])
+            sh &lt;- shapiro.test(x)
+            
+            data.frame(
+                Variable = v,
+                W = round(sh$statistic,5),
+                p_value = round(sh$p.value,5)
+            )
+        }))
+    })
+    
+    output$qq_test_ui &lt;- renderUI({
+        req(input$test_qq, input$vars_test)
+        
+        lapply(input$vars_test, function(v){
+            plotOutput(paste0("qq_test_", v))
+        })
+    })
+    
+    observe({
+        req(input$test_qq, input$vars_test)
+        
+        for(v in input$vars_test){
+            local({
+                varname &lt;- v
+                output[[paste0("qq_test_", varname)]] &lt;- renderPlot({
+                    x &lt;- na.omit(data_test()[[varname]])
+                    qqnorm(x)
+                    qqline(x, col="red")
+                })
+            })
+        }
+    })
+}
+
+shinyApp(ui, server)</code></pre>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./hypothesis.html" class="pagination-link" aria-label="Hypothesis testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hypothesis testing</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./failureRate.html" class="pagination-link" aria-label="Failure rate">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Failure rate</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
