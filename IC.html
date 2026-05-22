@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Click &amp; Learn - 11&nbsp; Aplicación de fiabilidad</title>
+<title>Click &amp; Learn - 5&nbsp; Inferencia estadística: estimación puntual e intervalos de confianza</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./redundancy_app.html" rel="next">
-<link href="./Fiabilidad.html" rel="prev">
+<link href="./Contrastes.html" rel="next">
+<link href="./RegresionCorrelacion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,11 +41,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<meta name="shinylive:serviceworker_dir" content=".">
-<script src="site_libs/quarto-contrib/shinylive-0.10.8/shinylive/load-shinylive-sw.js" type="module"></script>
-<script src="site_libs/quarto-contrib/shinylive-0.10.8/shinylive/run-python-blocks.js" type="module"></script>
-<link href="site_libs/quarto-contrib/shinylive-0.10.8/shinylive/shinylive.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,10 +68,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<style>
-  #quarto-content h1.title { display: none; }
-</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -89,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Fiabilidad.html">Fiabilidad</a></li><li class="breadcrumb-item"><a href="./reliability_app.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva.html">Estadística Descriptiva e Inferencia</a></li><li class="breadcrumb-item"><a href="./IC.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -99,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -149,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./IC.html" class="sidebar-item-text sidebar-link">
+  <a href="./IC.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></span></a>
   </div>
 </li>
@@ -196,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reliability_app.html" class="sidebar-item-text sidebar-link active">
+  <a href="./reliability_app.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></span></a>
   </div>
 </li>
@@ -230,20 +251,38 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#estimación-puntual" id="toc-estimación-puntual" class="nav-link active" data-scroll-target="#estimación-puntual"><span class="header-section-number">5.1</span> Estimación puntual</a></li>
+  <li><a href="#estimación-por-intervalos-de-confianza" id="toc-estimación-por-intervalos-de-confianza" class="nav-link" data-scroll-target="#estimación-por-intervalos-de-confianza"><span class="header-section-number">5.2</span> Estimación por intervalos de confianza</a></li>
+  <li><a href="#intervalos-de-confianza-sobre-poblaciones-normales" id="toc-intervalos-de-confianza-sobre-poblaciones-normales" class="nav-link" data-scroll-target="#intervalos-de-confianza-sobre-poblaciones-normales"><span class="header-section-number">5.3</span> Intervalos de confianza sobre poblaciones normales</a>
+  <ul class="collapse">
+  <li><a href="#intervalo-de-confianza-para-la-media-mu-de-una-población-normal-al-nivel-de-confianza-1-alpha" id="toc-intervalo-de-confianza-para-la-media-mu-de-una-población-normal-al-nivel-de-confianza-1-alpha" class="nav-link" data-scroll-target="#intervalo-de-confianza-para-la-media-mu-de-una-población-normal-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.3.1</span> Intervalo de confianza para la media, <span class="math inline">\(\mu\)</span>, de una población normal, al nivel de confianza <span class="math inline">\(1-\alpha\)</span></a></li>
+  <li><a href="#intervalo-de-confianza-para-la-varianza-sigma2-de-una-población-normal-al-nivel-de-confianza-1-alpha" id="toc-intervalo-de-confianza-para-la-varianza-sigma2-de-una-población-normal-al-nivel-de-confianza-1-alpha" class="nav-link" data-scroll-target="#intervalo-de-confianza-para-la-varianza-sigma2-de-una-población-normal-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.3.2</span> Intervalo de confianza para la varianza, <span class="math inline">\(\sigma^2\)</span>, de una población normal, al nivel de confianza <span class="math inline">\(1-\alpha\)</span></a></li>
+  </ul></li>
+  <li><a href="#intervalos-de-confianza-de-dos-poblaciones-normales" id="toc-intervalos-de-confianza-de-dos-poblaciones-normales" class="nav-link" data-scroll-target="#intervalos-de-confianza-de-dos-poblaciones-normales"><span class="header-section-number">5.4</span> Intervalos de confianza de dos poblaciones normales</a>
+  <ul class="collapse">
+  <li><a href="#intervalo-de-confianza-para-la-diferencia-de-medias-mu_x-mu_y-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha" id="toc-intervalo-de-confianza-para-la-diferencia-de-medias-mu_x-mu_y-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha" class="nav-link" data-scroll-target="#intervalo-de-confianza-para-la-diferencia-de-medias-mu_x-mu_y-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.4.1</span> Intervalo de confianza para la diferencia de medias, <span class="math inline">\(\mu_X-\mu_Y\)</span>, de dos poblaciones normales independientes, al nivel de confianza <span class="math inline">\(1-\alpha\)</span></a></li>
+  <li><a href="#intervalo-de-confianza-para-el-cociente-de-varianzas-fracsigma_x2sigma_y2-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha" id="toc-intervalo-de-confianza-para-el-cociente-de-varianzas-fracsigma_x2sigma_y2-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha" class="nav-link" data-scroll-target="#intervalo-de-confianza-para-el-cociente-de-varianzas-fracsigma_x2sigma_y2-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.4.2</span> Intervalo de confianza para el cociente de varianzas, <span class="math inline">\(\frac{\sigma_X^2}{\sigma_Y^2}\)</span>, de dos poblaciones normales, independientes al nivel de confianza <span class="math inline">\(1-\alpha\)</span></a></li>
+  </ul></li>
+  <li><a href="#ejemplo-control-de-calidad-en-microelectrónica." id="toc-ejemplo-control-de-calidad-en-microelectrónica." class="nav-link" data-scroll-target="#ejemplo-control-de-calidad-en-microelectrónica."><span class="header-section-number">5.5</span> Ejemplo: Control de Calidad en Microelectrónica.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Fiabilidad.html">Fiabilidad</a></li><li class="breadcrumb-item"><a href="./reliability_app.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva.html">Estadística Descriptiva e Inferencia</a></li><li class="breadcrumb-item"><a href="./IC.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta">
 
     
   
@@ -255,234 +294,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="column-screen">
-<pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
-#|   shinylive does not work in self-contained HTML documents.
-#|   Please set `embed-resources: false` in your metadata.
-#| standalone: true
-#| viewerHeight: 1000
-
-library(shiny)
-library(shinydashboard)
-
-# =========================
-# FUNCIONES GENERALES
-# =========================
-
-R_serie_id &lt;- function(n, p) p^n
-R_par_id &lt;- function(n, p) 1 - (1 - p)^n
-
-# =========================
-# UI
-# =========================
-
-ui &lt;- dashboardPage(
-    dashboardHeader(title = "Reliability"),
-    
-    dashboardSidebar(
-        sidebarMenu(
-            menuItem("Failure Rate", tabName = "failure"),
-            menuItem("Exponential Systems", tabName = "exp"),
-            menuItem("Series Systems", tabName = "series"),
-            menuItem("Parallel Systems", tabName = "parallel")
-        )
-    ),
-    
-    dashboardBody(
-        withMathJax(),
-        
-        tabItems(
-            
-            # =========================
-            # 1. FAILURE RATE (PRIMERA)
-            # =========================
-            
-            tabItem(tabName = "failure",
-                    fluidRow(
-                        box(width = 4,
-                            sliderInput("t_fail", "Time points", 10, 100, 50),
-                            radioButtons("fail_type", "Function:",
-                                         c("Reliability" = "R", "Failure rate" = "h")),
-                            radioButtons("fail_sys", "System:",
-                                         c("Initial" = "init",
-                                           "Series" = "serie",
-                                           "Parallel" = "paralelo"))
-                        ),
-                        
-                        box(width = 8,
-                            plotOutput("fail_plot"),
-                            uiOutput("fail_eq")
-                        )
-                    )
-            ),
-            
-            # =========================
-            # 2. EXPONENCIAL
-            # =========================
-            
-            tabItem(tabName = "exp",
-                    fluidRow(
-                        box(width = 4,
-                            radioButtons("exp_type", "System:",
-                                         c("Series" = "serie", "Parallel" = "paralelo")),
-                            sliderInput("L1", "Lambda 1", 0.001, 1, 0.5),
-                            sliderInput("L2", "Lambda 2", 0.001, 1, 0.5)
-                        ),
-                        
-                        box(width = 8,
-                            plotOutput("exp_plot"),
-                            uiOutput("exp_eq"),
-                            textOutput("exp_mttf")
-                        )
-                    )
-            ),
-            
-            # =========================
-            # 3. SERIES
-            # =========================
-            
-            tabItem(tabName = "series",
-                    fluidRow(
-                        box(width = 4,
-                            sliderInput("n_s", "n", 2, 20, 3),
-                            sliderInput("p_s", "p", 0, 1, 0.5)
-                        ),
-                        
-                        box(width = 8,
-                            textOutput("series_res"),
-                            plotOutput("series_plot")
-                        )
-                    )
-            ),
-            
-            # =========================
-            # 4. PARALLEL
-            # =========================
-            
-            tabItem(tabName = "parallel",
-                    fluidRow(
-                        box(width = 4,
-                            sliderInput("n_p", "n", 2, 20, 3),
-                            sliderInput("p_p", "p", 0, 1, 0.5)
-                        ),
-                        
-                        box(width = 8,
-                            textOutput("par_res"),
-                            plotOutput("par_plot")
-                        )
-                    )
-            )
-        )
-    )
-)
-
-# =========================
-# SERVER
-# =========================
-
-server &lt;- function(input, output) {
-    
-    # =========================
-    # FAILURE RATE
-    # =========================
-    
-    output$fail_plot &lt;- renderPlot({
-        t &lt;- seq(1,100,length.out=input$t_fail)
-        
-        if (input$fail_type=="R") {
-            if (input$fail_sys=="init") {
-                plot(t,2/(exp(t)+1),type="l",col="red",
-                     main="Reliability Function")
-            } else if (input$fail_sys=="serie") {
-                plot(t,8/(exp(t)+1)^3,type="l",
-                     main="Series System")
-            } else {
-                plot(t,1-((exp(t)-1)^3/(exp(t)+1)^3),type="l",
-                     main="Parallel System")
-            }
-        } else {
-            plot(t,exp(t)/(exp(t)+1),type="l",col="blue",
-                 main="Failure Rate")
-        }
-    })
-    
-    output$fail_eq &lt;- renderUI({
-        if (input$fail_type=="h") {
-            withMathJax("$$r(t)=\\frac{e^t}{e^t+1}$$")
-        } else if (input$fail_sys=="serie") {
-            withMathJax("$$R(t)=\\frac{8}{(e^t+1)^3}$$")
-        } else if (input$fail_sys=="paralelo") {
-            withMathJax("$$R(t)=1-\\frac{(e^t-1)^3}{(e^t+1)^3}$$")
-        } else {
-            withMathJax("$$R(t)=\\frac{2}{e^t+1}$$")
-        }
-    })
-    
-    # =========================
-    # EXPONENCIAL
-    # =========================
-    
-    output$exp_plot &lt;- renderPlot({
-        t &lt;- seq(0, 50, length.out = 100)
-        
-        if (input$exp_type == "serie") {
-            R &lt;- exp(-(input$L1 + input$L2)*t)
-            plot(t, R, type="l", col="red", main="Series Reliability")
-        } else {
-            R &lt;- 1 - (1-exp(-input$L1*t))*(1-exp(-input$L2*t))
-            plot(t, R, type="l", col="blue", main="Parallel Reliability")
-        }
-    })
-    
-    output$exp_eq &lt;- renderUI({
-        if (input$exp_type == "serie") {
-            withMathJax("$$R(t)=e^{-(\\lambda_1+\\lambda_2)t}$$")
-        } else {
-            withMathJax("$$R(t)=1-(1-e^{-\\lambda_1 t})(1-e^{-\\lambda_2 t})$$")
-        }
-    })
-    
-    output$exp_mttf &lt;- renderText({
-        if (input$exp_type == "serie") {
-            paste("MTTF:", round(1/(input$L1+input$L2),4))
-        } else {
-            paste("MTTF:", round(input$L1/(input$L2^2+input$L1*input$L2),4))
-        }
-    })
-    
-    # =========================
-    # SERIES
-    # =========================
-    
-    output$series_res &lt;- renderText({
-        paste("Reliability:", round(input$p_s^input$n_s,4))
-    })
-    
-    output$series_plot &lt;- renderPlot({
-        n &lt;- 2:50
-        plot(n, input$p_s^n, type="l",
-             main="R vs n (Series)", ylab="R")
-    })
-    
-    # =========================
-    # PARALLEL
-    # =========================
-    
-    output$par_res &lt;- renderText({
-        paste("Reliability:", round(1-(1-input$p_p)^input$n_p,4))
-    })
-    
-    output$par_plot &lt;- renderPlot({
-        n &lt;- 2:50
-        plot(n, 1-(1-input$p_p)^n, type="l",
-             main="R vs n (Parallel)", ylab="R")
-    })
-}
-
-shinyApp(ui, server)</code></pre>
-</div>
+<p>A diferencia de la estadística descriptiva la inferencia estadística es el puente que nos permite “predecir o generalizar” sobre una población completa usando solo una muestra.</p>
+<p>Cuando se desean estimar los parámetros de la población a partir de los de la muestra se consideran dos formas de realizar dicha estimación, puntual o por intervalos de confianza.</p>
+<section id="estimación-puntual" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="estimación-puntual"><span class="header-section-number">5.1</span> Estimación puntual</h2>
+<p>Su objetivo es dar a una característica poblacional desconocida (parámetro) un valor “razonable”, normalmente el valor que toma para una muestra concreta un estadístico, reflejo muestral de la característica poblacional.</p>
+<p>Dada <span class="math inline">\(x_1, x_2, \ldots , x_n\)</span> una muestra aleatoria de una variable aleatoria <span class="math inline">\(X \sim F_{\theta}\)</span>, una <strong>estimación puntual</strong> será <span class="math display">\[\hat{\theta} = f(x_1, x_2, \ldots ,x_n)\]</span></p>
+<p>El problema que surge es que la estimación puntual casi nunca es exactamente igual al valor real, depende de la muestra. Si repites el experimento, obtendrás un número distinto. Para tratar de solucionar este problema surgen los intervalos de confianza.</p>
+</section>
+<section id="estimación-por-intervalos-de-confianza" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="estimación-por-intervalos-de-confianza"><span class="header-section-number">5.2</span> Estimación por intervalos de confianza</h2>
+<p>Su objetivo es obtener un intervalo de posibles valores de la característica poblacional en el que confiamos, en cierta medida, que se encuentre su verdadero valor, esto es, un intervalo que contenga al verdadero valor del parámetro con una determinada confianza.</p>
+<p>Dada <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> una muestra aleatoria de una variable aleatoria <span class="math inline">\(X \sim F_{\theta}\)</span>, un <strong>intervalo de confianza</strong>, a nivel de confianza <span class="math inline">\(1-\alpha\)</span> será: <span class="math display">\[
+    \text{IC}(\theta)=[\hat{\theta}_I, \hat{\theta}_S] \quad \text{tal que} \quad
+    P[\hat{\theta}_I \leq \theta \leq  \hat{\theta}_S] \geq 1-\alpha
+    \]</span></p>
+<p><strong>Nivel de confianza</strong>, <span class="math inline">\((1-\alpha)\)</span>: El nivel de confianza es la probabilidad de que un intervalo de confianza contenga al verdadero valor del parámetro. <span class="math display">\[P[\widehat{\theta}_I \leq \theta \leq \widehat{\theta}_S] = 1 - \alpha\]</span></p>
+<p><strong>Nivel de significación</strong>, <span class="math inline">\(\alpha\)</span>: El nivel de significación es la probabilidad de que un intervalo de confianza no contenga al verdadero valor del parámetro. Es decir, el error permitido.</p>
+</section>
+<section id="intervalos-de-confianza-sobre-poblaciones-normales" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="intervalos-de-confianza-sobre-poblaciones-normales"><span class="header-section-number">5.3</span> Intervalos de confianza sobre poblaciones normales</h2>
+<p>Si la variable en estudio, <span class="math inline">\(X\)</span>, sigue una distribución normal es posible obtener intervalos de confianza para los parámetros <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>.</p>
+<section id="intervalo-de-confianza-para-la-media-mu-de-una-población-normal-al-nivel-de-confianza-1-alpha" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="intervalo-de-confianza-para-la-media-mu-de-una-población-normal-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.3.1</span> Intervalo de confianza para la media, <span class="math inline">\(\mu\)</span>, de una población normal, al nivel de confianza <span class="math inline">\(1-\alpha\)</span></h3>
+<p>Se muestrea una población normal para estimar el parámetro <span class="math inline">\(\mu\)</span>. Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> una m.a.s. de una población, <span class="math inline">\(X\rightarrow\mathcal{N}(\mu,\sigma^2)\)</span>. <span class="math display">\[P[\widehat{\mu}_I \leq \mu \leq \widehat{\mu}_S] = 1 - \alpha\]</span> El estadístico que se utiliza para construir el intervalo es el siguiente <span class="math display">\[\frac{\bar{X}-\mu}{S}\sqrt{n}\rightarrow t_{n-1}\]</span></p>
+<p>Intervalo de confianza para <span class="math inline">\(\mu\)</span> con varianza desconocida, al nivel de confianza, <span class="math inline">\(1-\alpha\)</span> <span class="math display">\[\left[\bar{X}-t_{n-1,1-\alpha/2}\frac{S}{\sqrt{n}},\bar{X}+t_{n-1,1-\alpha/2}\frac{\sigma}{\sqrt{n}}\right]=\left[\bar{X}\mp
+t_{n-1,1-\alpha/2}\frac{S}{\sqrt{n}}\right]\]</span></p>
+</section>
+<section id="intervalo-de-confianza-para-la-varianza-sigma2-de-una-población-normal-al-nivel-de-confianza-1-alpha" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="intervalo-de-confianza-para-la-varianza-sigma2-de-una-población-normal-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.3.2</span> Intervalo de confianza para la varianza, <span class="math inline">\(\sigma^2\)</span>, de una población normal, al nivel de confianza <span class="math inline">\(1-\alpha\)</span></h3>
+<p>Se muestrea una población normal para estimar el parámetro <span class="math inline">\(\sigma^2\)</span>. Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> una m.a.s. de una población, <span class="math inline">\(X\rightarrow\mathcal{N}(\mu,\sigma^2)\)</span>. <span class="math display">\[P[\widehat{\sigma}^2_I \leq \sigma^2 \leq \widehat{\sigma}^2_S] = 1 - \alpha\]</span></p>
+<p>El estadístico en este caso es <span class="math display">\[\frac{(n-1)S^2}{\sigma^2}=\frac{n\widehat{\sigma}^2}{\sigma^2}\rightarrow
+\chi^2_{n-1}\]</span></p>
+<p>Intervalo de confianza para <span class="math inline">\(\sigma^2\)</span> con media desconocida, al nivel de confianza, <span class="math inline">\(1-\alpha\)</span> <span class="math display">\[\left[\frac{(n-1)S^2}{\chi^2_{n-1,1-\alpha/2}},\frac{(n-1)S^2}{\chi^2_{n-1,\alpha/2}}\right]\]</span></p>
+</section>
+</section>
+<section id="intervalos-de-confianza-de-dos-poblaciones-normales" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="intervalos-de-confianza-de-dos-poblaciones-normales"><span class="header-section-number">5.4</span> Intervalos de confianza de dos poblaciones normales</h2>
+<p>En el caso en el que se tienen dos variables aleatorias, <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> normales e independientes, se pueden obtener los siguientes intervalos.</p>
+<section id="intervalo-de-confianza-para-la-diferencia-de-medias-mu_x-mu_y-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="intervalo-de-confianza-para-la-diferencia-de-medias-mu_x-mu_y-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.4.1</span> Intervalo de confianza para la diferencia de medias, <span class="math inline">\(\mu_X-\mu_Y\)</span>, de dos poblaciones normales independientes, al nivel de confianza <span class="math inline">\(1-\alpha\)</span></h3>
+<p>Sea una población donde se observan las v.a. <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, independientes tales que <span class="math display">\[
+\begin{array}{l}
+X\rightarrow\mathcal{N}(\mu_X,\sigma^2_X)\\
+Y\rightarrow\mathcal{N}(\mu_Y,\sigma^2_Y)
+\end{array}\]</span></p>
+<p>Consideramos una m.a.s. de tamaño <span class="math inline">\(n_X\)</span> de <span class="math inline">\(X\)</span>, <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> y una m.a.s. de tamaño <span class="math inline">\(n_Y\)</span> de <span class="math inline">\(Y\)</span>, <span class="math inline">\(Y_1,Y_2,\ldots,Y_n\)</span>.</p>
+<p><strong>Caso A</strong>. Varianzas poblacionales, <span class="math inline">\(\sigma^2_X\)</span> y <span class="math inline">\(\sigma^2_Y\)</span>, desconocidas, pero iguales</p>
+<p>El estadístico <span class="math display">\[\frac{\left(\bar{X}-\bar{Y}\right)-\left(\mu_X-\mu_Y\right)}{S_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}}\rightarrow
+t_{n_X+n_Y-2}\]</span> donde <span class="math display">\[S_p^2 =
+\frac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_y-2}=\frac{n_X\widehat{\sigma}_X^2+n_Y\widehat{\sigma}_Y^2}{n_X+n_y-2}\]</span></p>
+<p>Intervalo de confianza para <span class="math inline">\(\mu_X-\mu_Y\)</span> con varianzas desconocidas, supuestas iguales, al nivel de confianza, <span class="math inline">\(1-\alpha\)</span> <span class="math display">\[\left[\bar{X}-\bar{Y}-t_{n_X+n_Y-2,1-\alpha/2}S_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}},\bar{X}-\bar{Y}+t_{n_X+n_Y-2,1-\alpha/2}S_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}\right]=\]</span> <span class="math display">\[=\left[\bar{X}-\bar{Y}\mp
+t_{n_X+n_Y-2,1-\alpha/2}S_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}\right]\]</span></p>
+<p><strong>Caso B</strong>. Varianzas poblacionales, <span class="math inline">\(\sigma^2_X\)</span> y <span class="math inline">\(\sigma^2_Y\)</span>, desconocidas, distintas o no, con <span class="math inline">\(n_X,n_Y \geq 30\)</span></p>
+<p>El estadístico <span class="math display">\[\bar{X}-\bar{Y}\rightarrow\mathcal{N}(\mu_X-\mu_Y,\frac{S^2_X}{n_X}+\frac{S^2_Y}{n_Y})
+\Rightarrow
+\frac{\left(\bar{X}-\bar{Y}\right)-\left(\mu_X-\mu_Y\right)}{\sqrt{\frac{S^2_X}{n_X}+\frac{S^2_Y}{n_Y}}}\rightarrow\mathcal{N}(0,1)\]</span></p>
+<p>Intervalo de confianza para <span class="math inline">\(\mu_X-\mu_Y\)</span> con varianzas desconocidas, distintas o no, con <span class="math inline">\(n_X,n_Y \geq 30\)</span>, al nivel de confianza, <span class="math inline">\(1-\alpha\)</span> <span class="math display">\[\left[\bar{X}-\bar{Y}-z_{1-\alpha/2}\sqrt{\frac{S^2_X}{n_X}+\frac{S^2_Y}{n_Y}},\bar{X}-\bar{Y}+z_{1-\alpha/2}\sqrt{\frac{S^2_X}{n_X}+\frac{S^2_Y}{n_Y}}\right]=\left[\bar{X}-\bar{Y}\mp
+z_{1-\alpha/2}\sqrt{\frac{S^2_X}{n_X}+\frac{S^2_Y}{n_Y}}\right]\]</span></p>
+</section>
+<section id="intervalo-de-confianza-para-el-cociente-de-varianzas-fracsigma_x2sigma_y2-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="intervalo-de-confianza-para-el-cociente-de-varianzas-fracsigma_x2sigma_y2-de-dos-poblaciones-normales-independientes-al-nivel-de-confianza-1-alpha"><span class="header-section-number">5.4.2</span> Intervalo de confianza para el cociente de varianzas, <span class="math inline">\(\frac{\sigma_X^2}{\sigma_Y^2}\)</span>, de dos poblaciones normales, independientes al nivel de confianza <span class="math inline">\(1-\alpha\)</span></h3>
+<p>El estadístico <span class="math display">\[\frac{\frac{S^2_X}{\sigma_X^2}}{\frac{S^2_Y}{\sigma_Y^2}} =
+\frac{S^2_X\sigma^2_Y}{S_Y^2\sigma_X^2}\rightarrow\mathcal{F}_{n_X-1,n_Y-1}\]</span></p>
+<p>Intervalo de confianza para <span class="math inline">\(\frac{\sigma_X^2}{\sigma_Y^2}\)</span> con medias desconocidas al nivel de confianza, <span class="math inline">\(1-\alpha\)</span> <span class="math display">\[\left[\frac{1}{\mathcal{F}_{n_X-1,n_Y-1,1-\alpha/2}}\frac{S^2_X}{S_Y^2},\frac{1}{\mathcal{F}_{n_X-1,n_Y-1,\alpha/2}}\frac{S^2_X}{S_Y^2}\right]\]</span></p>
+</section>
+</section>
+<section id="ejemplo-control-de-calidad-en-microelectrónica." class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="ejemplo-control-de-calidad-en-microelectrónica."><span class="header-section-number">5.5</span> Ejemplo: Control de Calidad en Microelectrónica.</h2>
+<p>Se ha medido el espesor de una capa de recubrimiento de oro (en micrómetros, <span class="math inline">\(\mu m\)</span>) depositada sobre una placa de circuito impreso mediante un proceso químico. El espesor objetivo es de 2.50 <span class="math inline">\(\mu m\)</span>. Aquí tienes los datos de 15 mediciones realizadas por un sensor de alta precisión: <span class="math display">\[2.42, 2.45, 2.48, 2.50, 2.51, 2.52, 2.53, 2.53, 2.54, 2.56, 2.58, 2.60, 2.62, 2.75, 2.81\]</span> Obtener un intervalo de confianza, a nivel de significación del 5% para el espesor medio.</p>
+<p>Los datos que se necesitan son:</p>
+<p>Media muestral: <span class="math inline">\(\bar{x} = 2.56\)</span></p>
+<p>Desviación típica: <span class="math inline">\(s = 0.104\)</span></p>
+<p>Punto crítico: <span class="math inline">\(t_{n-1,1-\alpha/2} = t_{14,0.975} = 2.145\)</span></p>
+<p>Entonces, el intervalo de confianza para el espesor medio resulta <span class="math display">\[IC(\mu) = (2.502,2.618)\]</span> Existe un 95% de confianza de que el espesor real promedio de toda la producción está entre 2.502 y 2.618 <span class="math inline">\(\mu m\)</span>. Como el objetivo era 2.50 y está fuera del intervalo (por debajo), podemos concluir con evidencia estadística que el proceso está produciendo capas demasiado gruesas.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -894,15 +782,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Fiabilidad.html" class="pagination-link" aria-label="Análisis de estructuras">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></span>
+      <a href="./RegresionCorrelacion.html" class="pagination-link" aria-label="Regresión y correlación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./redundancy_app.html" class="pagination-link" aria-label="Aplicación de redundancia">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Aplicación de redundancia</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Contrastes.html" class="pagination-link" aria-label="Contrastes de hipótesis">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Contrastes de hipótesis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

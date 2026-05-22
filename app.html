@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.553">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Teaching materials - 6&nbsp; Statistics Application</title>
+<title>Click &amp; Learn - 9&nbsp; Aplicación Estadística Descriptiva e Inferencia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./failureRate.html" rel="next">
-<link href="./hypothesis.html" rel="prev">
+<link href="./Fiabilidad.html" rel="next">
+<link href="./Ayuda_Shiny.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,17 +60,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <style>
@@ -86,11 +86,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva_EN.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./app.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva.html">Estadística Descriptiva e Inferencia</a></li><li class="breadcrumb-item"><a href="./app.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -104,12 +104,12 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Teaching materials</a> 
+      <a href="./">Click &amp; Learn</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -117,52 +117,64 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conjunto de datos de prueba</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Descriptive Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Estadística Descriptiva e Inferencia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Descriptiva_EN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+  <a href="./Descriptiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estadística descriptiva</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tema4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regresion and correlation</span></span></a>
+  <a href="./RegresionCorrelacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./confidenceIntervals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Confidence intervals</span></span></a>
+  <a href="./IC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hypothesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hypothesis testing</span></span></a>
+  <a href="./Contrastes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Contrastes de hipótesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ejemplo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis datos: Steel Plates Faults</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ayuda_Shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ayuda para las aplicaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></span></a>
   </div>
 </li>
       </ul>
@@ -170,40 +182,28 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Reliability</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Fiabilidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./failureRate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Failure rate</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./systemReliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System reliability</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coherentSystems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coherent systems</span></span></a>
+  <a href="./Fiabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reliability_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reliability application</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./redundancy_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redundancy application</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Aplicación de redundancia</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,34 +211,16 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Quality Control</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Control de Calidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./toleranceLimits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Tolerance limits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./controlCharts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control charts</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./operatingCharacteristicCurve.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Operate characterisctic curve</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./qualityControl_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control application</span></span></a>
+  <a href="./Calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></span></a>
   </div>
 </li>
       </ul>
@@ -254,9 +236,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva_EN.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./app.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva.html">Estadística Descriptiva e Inferencia</a></li><li class="breadcrumb-item"><a href="./app.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></h1>
 </div>
 
 
@@ -288,6 +270,7 @@ library(ggplot2)
 library(readxl)
 library(shinyjs)
 library(BSDA)
+
 # =========================
 # FUNCIONES AUXILIARES
 # =========================
@@ -299,13 +282,13 @@ moda &lt;- function(x){
 uploadBox &lt;- function(id){
     ns &lt;- NS(id)
     box(
-        title = "Data loading", width = 12, status = "primary", solidHeader = TRUE,
-        fileInput(ns("file"), "Select file", accept = c(".csv", ".txt", ".xlsx", ".xls", ".sav")),
-        selectInput(ns("sep"), "Column separator", c("Comma"=",","Semicolon"=";","Tab"="    ")),
-        selectInput(ns("dec"), "Decimal separator", c("Dot"=".","Comma"=",")),
-        checkboxInput(ns("header"), "Header", TRUE),
+        title = "Carga de datos", width = 12, status = "primary", solidHeader = TRUE,
+        fileInput(ns("file"), "Selecciona archivo", accept = c(".csv", ".txt", ".xlsx", ".xls", ".sav")),
+        selectInput(ns("sep"), "Separador columnas", c("Coma"=",","Punto y coma"=";","Tab"="    ")),
+        selectInput(ns("dec"), "Separador decimal", c("Punto"=".","Coma"=",")),
+        checkboxInput(ns("header"), "Cabecera", TRUE),
         br(),
-        h4("Preview (first 3 rows)"),
+        h4("Vista previa (3 primeras filas)"),
         tableOutput(ns("preview"))
     )
 }
@@ -367,10 +350,10 @@ ui &lt;- dashboardPage(
     dashboardHeader(title = "Click &amp; Learn"),
     dashboardSidebar(
         sidebarMenu(
-            menuItem("Descriptive Statistics", tabName = "desc", icon = icon("chart-bar")),
-            menuItem("Regression / Correlation", tabName = "reg", icon = icon("chart-line")),
-            menuItem("Confidence Intervals", tabName = "ci", icon = icon("percent")),
-            menuItem("Hypothesis Testing", tabName = "tests", icon = icon("flask"))
+            menuItem("Estadística Descriptiva", tabName = "desc", icon = icon("chart-bar")),
+            menuItem("Regresión / Correlación", tabName = "reg", icon = icon("chart-line")),
+            menuItem("Intervalos de Confianza", tabName = "ci", icon = icon("percent")),
+            menuItem("Contrastes de Hipótesis", tabName = "tests", icon = icon("flask"))
         )
     ),
     dashboardBody(
@@ -381,34 +364,34 @@ ui &lt;- dashboardPage(
             tabItem(tabName = "desc",
                     fluidRow(uploadBox("up_desc")),
                     fluidRow(
-                        box(width = 4, title = "Measures", status = "warning", solidHeader = TRUE,
+                        box(width = 4, title = "Medidas", status = "warning", solidHeader = TRUE,
                             uiOutput("vars_desc_ui"),
-                            h4("Measures of position"),
-                            checkboxInput("mean", "Mean"),
-                            checkboxInput("median", "Median"),
-                            checkboxInput("mode", "Mode"),
-                            checkboxInput("quart", "Quartiles"),
+                            h4("Medidas de posición"),
+                            checkboxInput("mean", "Media"),
+                            checkboxInput("median", "Mediana"),
+                            checkboxInput("mode", "Moda"),
+                            checkboxInput("quart", "Cuartiles"),
                             textInput("percent", "Percentiles", placeholder = "20,50,80"),
                             br(),
-                            h4("Measures of dispersion"),
-                            checkboxInput("min", "Minimum"),
-                            checkboxInput("max", "Maximum"),
-                            checkboxInput("range", "Range"),
-                            checkboxInput("iqr", "Interquartile range"),
-                            checkboxInput("var", "Variance"),
-                            checkboxInput("sd", "Standard deviation"),
-                            checkboxInput("cv", "Coefficient of variation"),
+                            h4("Medidas de dispersión"),
+                            checkboxInput("min", "Mínimo"),
+                            checkboxInput("max", "Máximo"),
+                            checkboxInput("range", "Rango"),
+                            checkboxInput("iqr", "Rango intercuartílico"),
+                            checkboxInput("var", "Varianza"),
+                            checkboxInput("sd", "Desviación típica"),
+                            checkboxInput("cv", "Coeficiente de variación"),
                             br(),
-                            h4("Measures of Shape"),
-                            checkboxInput("skew", "Skewness"),
-                            checkboxInput("kurt", "Kurtosis"),
+                            h4("Medidas de forma"),
+                            checkboxInput("skew", "Asimetría"),
+                            checkboxInput("kurt", "Curtosis"),
                             br(),
-                            h4("Graphical representations"),
-                            checkboxInput("show_hist", "Histogram"),
-                            checkboxInput("normal", "Overlay Normal curve"),
+                            h4("Representaciones gráficas"),
+                            checkboxInput("show_hist", "Histograma"),
+                            checkboxInput("normal", "Superponer curva normal"),
                             checkboxInput("show_box", "Boxplot")
                         ),
-                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                        box(width = 8, title = "Resultados", status = "primary", solidHeader = TRUE,
                             tableOutput("tabla_desc"),
                             br(),
                             uiOutput("plots_desc")
@@ -420,25 +403,25 @@ ui &lt;- dashboardPage(
             tabItem(tabName = "reg",
                     fluidRow(uploadBox("up_reg")),
                     fluidRow(
-                        box(width = 4, title = "Regression Fit", status = "warning", solidHeader = TRUE,
+                        box(width = 4, title = "Ajuste", status = "warning", solidHeader = TRUE,
                             
                             uiOutput("dep_ui"),
                             uiOutput("indep_ui"),
                             
                             br(),
-                            h4("Model"),
-                            checkboxInput("corr_matrix", "Correlation matrix"),
-                            checkboxInput("corr_test", "Correlation test"),
-                            checkboxInput("cov_matrix", "Variance-Covariance matrix"),
-                            checkboxInput("r2_show", "Coefficient of determination (R²)"),
-                            checkboxInput("show_scatter", "Scatterplot + fit"),
+                            h4("Modelo"),
+                            checkboxInput("corr_matrix", "Matriz de correlación"),
+                            checkboxInput("corr_test", "Test de correlación"),
+                            checkboxInput("cov_matrix", "Matriz de varianzas-covarianzas"),
+                            checkboxInput("r2_show", "Coeficiente de determinación (R²)"),
+                            checkboxInput("show_scatter", "Nube de puntos + ajuste"),
                             
                             br(),
-                            h4("Normality Tests"),
-                            checkboxInput("do_shapiro", "Shapiro-Wilk test"),
-                            checkboxInput("do_qq", "Q-Q plot")
+                            h4("Pruebas de Normalidad"),
+                            checkboxInput("do_shapiro", "Test Shapiro-Wilk"),
+                            checkboxInput("do_qq", "Q-Q Plot")
                         ),
-                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                        box(width = 8, title = "Resultados", status = "primary", solidHeader = TRUE,
                             tableOutput("reg_table"),
                             br(),
                             tableOutput("r2_table"),
@@ -462,7 +445,7 @@ ui &lt;- dashboardPage(
             tabItem(tabName = "ci",
                     fluidRow(uploadBox("up_ci")),
                     fluidRow(
-                        box(width = 4, title = "Confidence Intervals", status = "warning", solidHeader = TRUE,
+                        box(width = 4, title = "Intervalos de Confianza", status = "warning", solidHeader = TRUE,
                             
                             uiOutput("vars_ci_ui"),
                             uiOutput("group_var_ui"),
@@ -470,14 +453,14 @@ ui &lt;- dashboardPage(
                             br(),
                             #h4("Intervalos de confianza"),
                             
-                            checkboxInput("ci_mean", "Mean CI"),
-                            checkboxInput("ci_var", "Variance CI"),
-                            checkboxInput("ci_diff", "Means difference CI"),
-                            checkboxInput("ci_ratio_var", "Variances ratio CI"),
+                            checkboxInput("ci_mean", "IC media"),
+                            checkboxInput("ci_var", "IC varianza"),
+                            checkboxInput("ci_diff", "IC diferencia de medias"),
+                            checkboxInput("ci_ratio_var", "IC cociente de varianzas"),
                             
-                            numericInput("conf_level", "Confidence level (%)", 95, min = 1, max = 99.9)
+                            numericInput("conf_level", "Nivel confianza (%)", 95, min = 1, max = 99.9)
                         ),
-                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                        box(width = 8, title = "Resultados", status = "primary", solidHeader = TRUE,
                             tableOutput("ci_meanvar_table"),
                             br(),
                             tableOutput("ci_diff_table"),
@@ -491,38 +474,38 @@ ui &lt;- dashboardPage(
             tabItem(tabName = "tests",
                     fluidRow(uploadBox("up_test")),
                     fluidRow(
-                        box(width = 4, title = "Hypothesis tests", status = "warning", solidHeader = TRUE,
+                        box(width = 4, title = "Contrastes de Hipótesis", status = "warning", solidHeader = TRUE,
                             
                             uiOutput("vars_test_ui"),
                             uiOutput("group_test_ui"),
                             
                             br(),
-                            h4("Normality Tests"),
-                            checkboxInput("test_shapiro", "Shapiro-Wilk test"),
-                            checkboxInput("test_qq", "Q-Q plot"),
+                            h4("Pruebas de Normalidad"),
+                            checkboxInput("test_shapiro", "Test Shapiro-Wilk"),
+                            checkboxInput("ks", "Test Kolmogorov-Smirnov"),
+                            checkboxInput("test_qq", "Q-Q Plot"),
                             
                             br(),
-                            h4("Parametric Tests"),
+                            h4("Contrastes paramétricos"),
                             
-                            textInput("mu_test", "Hypothesized mean", placeholder = "10"),
-                            textInput("var_test", "Hypothesized variance", placeholder = "5"),
+                            textInput("mu_test", "Media hipotética", placeholder = "Ej: 10"),
+                            textInput("var_test", "Varianza hipotética", placeholder = "Ej: 5"),
                             
-                            checkboxInput("t1", "One-sample t-test"),
-                            checkboxInput("var1", "Variance test"),
-                            checkboxInput("var_ratio", "Variances ratio test"),
-                            checkboxInput("t_indep", "Independent samples t-test"),
-                            checkboxInput("welch", "Welch test"),
+                            checkboxInput("t1", "Test t una muestra"),
+                            checkboxInput("var1", "Test varianza"),
+                            checkboxInput("var_ratio", "Test cociente varianzas"),
+                            checkboxInput("t_indep", "Test t independientes"),
+                            checkboxInput("welch", "Test Welch"),
                             
                             br(),
-                            h4("Non-parametric Tests"),
+                            h4("Contrastes no paramétricos"),
                             
-                            textInput("median_test", "Hypothesized median", placeholder = "10"),
+                            textInput("median_test", "Mediana hipotética", placeholder = "Ej: 10"),
                             
-                            checkboxInput("sign_test", "Sign test"),
-                            checkboxInput("mw", "Mann-Whitney test"),
-                            checkboxInput("ks", "Kolmogorov-Smirnov test")
+                            checkboxInput("sign_test", "Test de signos (1 muestra)"),
+                            checkboxInput("mw", "Test Mann-Whitney (2 muestras independientes)")
                         ),
-                        box(width = 8, title = "Results", status = "primary", solidHeader = TRUE,
+                        box(width = 8, title = "Resultados", status = "primary", solidHeader = TRUE,
                             
                             tableOutput("param_table"),
                             br(),
@@ -583,9 +566,9 @@ server &lt;- function(input, output, session){
         for(v in input$vars_desc){
             x &lt;- na.omit(df[[v]])
             tmp &lt;- c()
-            if(input$mean) tmp['Mean'] &lt;- mean(x)
-            if(input$median) tmp['Median'] &lt;- median(x)
-            if(input$mode) tmp['Mode'] &lt;- moda(x)
+            if(input$mean) tmp['Media'] &lt;- mean(x)
+            if(input$median) tmp['Mediana'] &lt;- median(x)
+            if(input$mode) tmp['Moda'] &lt;- moda(x)
             if(input$quart){
                 q &lt;- quantile(x, c(.25,.5,.75))
                 tmp['Q1'] &lt;- q[1]; tmp['Q2'] &lt;- q[2]; tmp['Q3'] &lt;- q[3]
@@ -594,15 +577,15 @@ server &lt;- function(input, output, session){
                 q &lt;- quantile(x, percentiles/100)
                 for(i in seq_along(q)) tmp[paste0('P', percentiles[i])] &lt;- q[i]
             }
-            if(input$min) tmp['Minimum'] &lt;- min(x)
-            if(input$max) tmp['Maximum'] &lt;- max(x)
-            if(input$range) tmp['Range'] &lt;- max(x) - min(x)
-            if(input$iqr) tmp['Interquartile range'] &lt;- IQR(x)
-            if(input$var) tmp['Variance'] &lt;- var(x)
+            if(input$min) tmp['Mínimo'] &lt;- min(x)
+            if(input$max) tmp['Máximo'] &lt;- max(x)
+            if(input$range) tmp['Rango'] &lt;- max(x) - min(x)
+            if(input$iqr) tmp['Rango intercuartílico'] &lt;- IQR(x)
+            if(input$var) tmp['Varianza'] &lt;- var(x)
             if(input$sd) tmp['SD'] &lt;- sd(x)
-            if(input$cv) tmp['Coeff. variation'] &lt;- sd(x)/mean(x)
-            if(input$skew) tmp['Skewness'] &lt;- skewness(x)
-            if(input$kurt) tmp['Kurtosis'] &lt;- kurtosis(x)
+            if(input$cv) tmp['Coef. variación'] &lt;- sd(x)/mean(x)
+            if(input$skew) tmp['Asimetría'] &lt;- skewness(x)
+            if(input$kurt) tmp['Curtosis'] &lt;- kurtosis(x)
             res[[v]] &lt;- tmp
         }
         as.data.frame(res)
@@ -650,7 +633,7 @@ server &lt;- function(input, output, session){
                     hist(
                         x,
                         probability = TRUE,
-                        main = paste("Histogram", varname),
+                        main = paste("Histograma", varname),
                         col = "gray80"
                     )
                     
@@ -688,8 +671,8 @@ server &lt;- function(input, output, session){
         
         selectInput(
             "dep_var",
-            "Dependent variable",
-            choices = c("Select variable" = "", nums),
+            "Dependiente",
+            choices = c("Selecciona variable" = "", nums),
             selected = ""
         )
     })
@@ -702,7 +685,7 @@ server &lt;- function(input, output, session){
         
         selectInput(
             "indep_vars",
-            "Independent variable",
+            "Independientes",
             nums,
             multiple = TRUE
         )
@@ -741,9 +724,9 @@ server &lt;- function(input, output, session){
         )]
         
         names(coefs) &lt;- c(
-            "Coefficient",
-            "Estimate",
-            "Std. error",
+            "Coeficiente",
+            "Estimación",
+            "Error Std",
             "t",
             "p_value"
         )
@@ -788,8 +771,8 @@ server &lt;- function(input, output, session){
         )
         
         data.frame(
-            Measure = c("R²", "R² fitted"),
-            Value = round(
+            Medida = c("R²", "R² ajustado"),
+            Valor = round(
                 c(summary(fit)$r.squared,
                   summary(fit)$adj.r.squared),
                 5
@@ -817,7 +800,7 @@ server &lt;- function(input, output, session){
             data.frame(
                 Variable_1 = p[1],
                 Variable_2 = p[2],
-                Correlation = round(ct$estimate, 5),
+                Correlacion = round(ct$estimate, 5),
                 p_value = round(ct$p.value, 5)
             )
         }))
@@ -874,7 +857,7 @@ server &lt;- function(input, output, session){
                 output[[paste0("qq_", varname)]] &lt;- renderPlot({
                     x &lt;- na.omit(data_reg()[[varname]])
                     
-                    qqnorm(x, main = paste("Q-Q plot:", varname))
+                    qqnorm(x, main = paste("Q-Q Plot:", varname))
                     qqline(x, col = "red", lwd = 2)
                 })
             })
@@ -918,8 +901,8 @@ server &lt;- function(input, output, session){
         
         selectInput(
             "group_var",
-            "Grouping variable",
-            choices = c("None" = "", facs),
+            "Variable de agrupación",
+            choices = c("Ninguna" = "", facs),
             selected = ""
         )
     })
@@ -970,9 +953,9 @@ server &lt;- function(input, output, session){
                 li &lt;- m - tval * sqrt(s2/n)
                 ls &lt;- m + tval * sqrt(s2/n)
                 
-                fila$Mean &lt;- round(m,5)
-                fila$LowerL_Mean &lt;- round(li,5)
-                fila$UpperL_Mean &lt;- round(ls,5)
+                fila$Media &lt;- round(m,5)
+                fila$LI_Media &lt;- round(li,5)
+                fila$LS_Media &lt;- round(ls,5)
             }
             
             if(input$ci_var){
@@ -982,9 +965,9 @@ server &lt;- function(input, output, session){
                 li &lt;- (n-1)*s2/chi2
                 ls &lt;- (n-1)*s2/chi1
                 
-                fila$Variance &lt;- round(s2,5)
-                fila$LowerL_Var &lt;- round(li,5)
-                fila$UpperL_Var &lt;- round(ls,5)
+                fila$Varianza &lt;- round(s2,5)
+                fila$LI_Var &lt;- round(li,5)
+                fila$LS_Var &lt;- round(ls,5)
             }
             
             res[[v]] &lt;- fila
@@ -1029,11 +1012,11 @@ server &lt;- function(input, output, session){
             
             res[[v]] &lt;- data.frame(
                 Variable = v,
-                Mean_Group1 = round(m1,5),
-                Mean_Group2 = round(m2,5),
-                Difference = round(diff,5),
-                LowerL = round(li,5),
-                UpperL = round(ls,5)
+                Media_Grupo1 = round(m1,5),
+                Media_Grupo2 = round(m2,5),
+                Diferencia = round(diff,5),
+                LI = round(li,5),
+                LS = round(ls,5)
             )
         }
         
@@ -1073,11 +1056,11 @@ server &lt;- function(input, output, session){
             
             res[[v]] &lt;- data.frame(
                 Variable = v,
-                Var_Group1 = round(s1,5),
-                Var_Group2 = round(s2,5),
-                Ratio = round(ratio,5),
-                LowerL = round(li,5),
-                UpperL = round(ls,5)
+                Var_Grupo1 = round(s1,5),
+                Var_Grupo2 = round(s2,5),
+                Cociente = round(ratio,5),
+                LI = round(li,5),
+                LS = round(ls,5)
             )
         }
         
@@ -1102,8 +1085,8 @@ server &lt;- function(input, output, session){
         
         selectInput(
             "group_test",
-            "Grouping variable",
-            choices = c("None" = "", facs),
+            "Variable de agrupación",
+            choices = c("Ninguna" = "", facs),
             selected = ""
         )
     })
@@ -1153,8 +1136,8 @@ server &lt;- function(input, output, session){
                 
                 out &lt;- rbind(out, data.frame(
                     Variable = v,
-                    Test = "One-sample t-test",
-                    Statistic = round(tt$statistic, 5),
+                    Test = "t una muestra",
+                    Estadistico = round(tt$statistic, 5),
                     p_value = round(tt$p.value, 5)
                 ))
             }
@@ -1172,8 +1155,8 @@ server &lt;- function(input, output, session){
                 
                 out &lt;- rbind(out, data.frame(
                     Variable = v,
-                    Test = "Variance test",
-                    Statistic = round(chi, 5),
+                    Test = "Test varianza",
+                    Estadistico = round(chi, 5),
                     p_value = round(pval, 5)
                 ))
             }
@@ -1202,8 +1185,8 @@ server &lt;- function(input, output, session){
             
             out &lt;- rbind(out, data.frame(
                 Variable = v,
-                Test = "Variances ratio test",
-                Statistic = round(ft$statistic, 5),
+                Test = "Cociente varianzas",
+                Estadistico = round(ft$statistic, 5),
                 p_value = round(ft$p.value, 5)
             ))
         }
@@ -1231,8 +1214,8 @@ server &lt;- function(input, output, session){
             
             out &lt;- rbind(out, data.frame(
                 Variable = v,
-                Test = "Independent samples test",
-                Statistic = round(tt$statistic, 5),
+                Test = "t independientes",
+                Estadistico = round(tt$statistic, 5),
                 p_value = round(tt$p.value, 5)
             ))
         }
@@ -1260,8 +1243,8 @@ server &lt;- function(input, output, session){
             
             out &lt;- rbind(out, data.frame(
                 Variable = v,
-                Test = "Welch test",
-                Statistic = round(tt$statistic, 5),
+                Test = "Welch",
+                Estadistico = round(tt$statistic, 5),
                 p_value = round(tt$p.value, 5)
             ))
         }
@@ -1277,24 +1260,24 @@ server &lt;- function(input, output, session){
         
         for(v in input$vars_test){
             
-            # x &lt;- na.omit(df[[v]])
-            # 
-            # signs &lt;- sum(x &gt; input$median_test)
-            # n &lt;- length(x)
-            # 
-            # pval &lt;- binom.test(signs, n, 0.5)$p.value
-            
-            x &lt;- na.omit(df[[v]])
-            
-            signs &lt;- sum(x &gt; input$median_test)
-            n &lt;- length(x)
-            
-            pval &lt;- SIGN.test(x, md = as.numeric(input$median_test))$p.value
+          # x &lt;- na.omit(df[[v]])
+          # 
+          # signs &lt;- sum(x &gt; input$median_test)
+          # n &lt;- length(x)
+          # 
+          # pval &lt;- binom.test(signs, n, 0.5)$p.value
+          
+          x &lt;- na.omit(df[[v]])
+          
+          signs &lt;- sum(x &gt; input$median_test)
+          n &lt;- length(x)
+          
+          pval &lt;- SIGN.test(x, md = as.numeric(input$median_test))$p.value
             
             out &lt;- rbind(out, data.frame(
                 Variable = v,
-                Test = "Sign test",
-                Statistic = signs,
+                Test = "Signos",
+                Estadistico = signs,
                 p_value = round(pval, 5)
             ))
         }
@@ -1322,8 +1305,8 @@ server &lt;- function(input, output, session){
             
             out &lt;- rbind(out, data.frame(
                 Variable = v,
-                Test = "Mann-Whitney test",
-                Statistic = round(mw$statistic, 5),
+                Test = "Mann-Whitney",
+                Estadistico = round(mw$statistic, 5),
                 p_value = round(mw$p.value, 5)
             ))
         }
@@ -1345,8 +1328,8 @@ server &lt;- function(input, output, session){
             
             out &lt;- rbind(out, data.frame(
                 Variable = v,
-                Test = "Kolmogorov-Smirnov test",
-                Statistic = round(ks$statistic, 5),
+                Test = "Kolmogorov-Smirnov",
+                Estadistico = round(ks$statistic, 5),
                 p_value = round(ks$p.value, 5)
             ))
         }
@@ -1453,12 +1436,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1810,13 +1793,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./hypothesis.html" class="pagination-link" aria-label="Hypothesis testing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hypothesis testing</span></span>
+      <a href="./Ayuda_Shiny.html" class="pagination-link" aria-label="Ayuda para las aplicaciones">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ayuda para las aplicaciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./failureRate.html" class="pagination-link" aria-label="Failure rate">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Failure rate</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Fiabilidad.html" class="pagination-link" aria-label="Análisis de estructuras">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

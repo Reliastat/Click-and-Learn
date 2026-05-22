@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Click &amp; Learn - 10&nbsp; Análisis de estructuras</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./reliability_app.html" rel="next">
+<link href="./app.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Fiabilidad.html">Fiabilidad</a></li><li class="breadcrumb-item"><a href="./Fiabilidad.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Click &amp; Learn</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conjunto de datos de prueba</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Estadística Descriptiva e Inferencia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Descriptiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estadística descriptiva</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RegresionCorrelacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Contrastes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Contrastes de hipótesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ejemplo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis datos: Steel Plates Faults</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ayuda_Shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ayuda para las aplicaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Fiabilidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Fiabilidad.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reliability_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./redundancy_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Aplicación de redundancia</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Control de Calidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">10.1</span> Introducción</a></li>
+  <li><a href="#conceptos-básicos" id="toc-conceptos-básicos" class="nav-link" data-scroll-target="#conceptos-básicos"><span class="header-section-number">10.2</span> Conceptos básicos</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-sistema-en-serie" id="toc-ejemplo-sistema-en-serie" class="nav-link" data-scroll-target="#ejemplo-sistema-en-serie"><span class="header-section-number">10.2.1</span> Ejemplo: Sistema en serie</a></li>
+  <li><a href="#ejemplo-sistema-en-paralelo" id="toc-ejemplo-sistema-en-paralelo" class="nav-link" data-scroll-target="#ejemplo-sistema-en-paralelo"><span class="header-section-number">10.2.2</span> Ejemplo: Sistema en paralelo</a></li>
+  <li><a href="#ejemplo-sistema-kn" id="toc-ejemplo-sistema-kn" class="nav-link" data-scroll-target="#ejemplo-sistema-kn"><span class="header-section-number">10.2.3</span> Ejemplo: Sistema <span class="math inline">\(k/n\)</span></a></li>
+  </ul></li>
+  <li><a href="#representación-gráfica-de-la-lógica-de-un-sistema" id="toc-representación-gráfica-de-la-lógica-de-un-sistema" class="nav-link" data-scroll-target="#representación-gráfica-de-la-lógica-de-un-sistema"><span class="header-section-number">10.3</span> Representación gráfica de la lógica de un sistema</a>
+  <ul class="collapse">
+  <li><a href="#diagramas-de-bloque-rbd" id="toc-diagramas-de-bloque-rbd" class="nav-link" data-scroll-target="#diagramas-de-bloque-rbd"><span class="header-section-number">10.3.1</span> Diagramas de bloque (RBD)</a></li>
+  </ul></li>
+  <li><a href="#fiabilidad-de-sistemas" id="toc-fiabilidad-de-sistemas" class="nav-link" data-scroll-target="#fiabilidad-de-sistemas"><span class="header-section-number">10.4</span> Fiabilidad de sistemas</a>
+  <ul class="collapse">
+  <li><a href="#fiabilidad-de-sistemas-de-componentes-independientes" id="toc-fiabilidad-de-sistemas-de-componentes-independientes" class="nav-link" data-scroll-target="#fiabilidad-de-sistemas-de-componentes-independientes"><span class="header-section-number">10.4.1</span> Fiabilidad de sistemas de componentes independientes</a></li>
+  </ul></li>
+  <li><a href="#tiempo-de-vida-del-sistema" id="toc-tiempo-de-vida-del-sistema" class="nav-link" data-scroll-target="#tiempo-de-vida-del-sistema"><span class="header-section-number">10.5</span> Tiempo de vida del sistema</a></li>
+  <li><a href="#medidas-de-importancia-de-una-componente" id="toc-medidas-de-importancia-de-una-componente" class="nav-link" data-scroll-target="#medidas-de-importancia-de-una-componente"><span class="header-section-number">10.6</span> Medidas de importancia de una componente</a>
+  <ul class="collapse">
+  <li><a href="#medida-de-importancia-de-birnbaum-ib" id="toc-medida-de-importancia-de-birnbaum-ib" class="nav-link" data-scroll-target="#medida-de-importancia-de-birnbaum-ib"><span class="header-section-number">10.6.1</span> Medida de importancia de Birnbaum (<span class="math inline">\(I^{B}\)</span>)</a></li>
+  <li><a href="#medida-de-importancia-crítica-icr" id="toc-medida-de-importancia-crítica-icr" class="nav-link" data-scroll-target="#medida-de-importancia-crítica-icr"><span class="header-section-number">10.6.2</span> Medida de importancia crítica (<span class="math inline">\(I^{CR}\)</span>)</a></li>
+  <li><a href="#medida-de-capacidad-de-mejora-iip" id="toc-medida-de-capacidad-de-mejora-iip" class="nav-link" data-scroll-target="#medida-de-capacidad-de-mejora-iip"><span class="header-section-number">10.6.3</span> Medida de capacidad de mejora (<span class="math inline">\(I^{IP}\)</span>)</a></li>
+  <li><a href="#comparación-de-medidas" id="toc-comparación-de-medidas" class="nav-link" data-scroll-target="#comparación-de-medidas"><span class="header-section-number">10.6.4</span> Comparación de medidas</a></li>
+  </ul></li>
+  <li><a href="#redundancia" id="toc-redundancia" class="nav-link" data-scroll-target="#redundancia"><span class="header-section-number">10.7</span> Redundancia</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Fiabilidad.html">Fiabilidad</a></li><li class="breadcrumb-item"><a href="./Fiabilidad.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">10.1</span> Introducción</h2>
+<p>La fiabilidad de un sistema se puede entender como <em>la capacidad del sistema para llevar a cabo una determinada función, bajo unas condiciones experimentales dadas y durante un cierto periodo de tiempo</em>. Esta definición implica una serie de conceptos que hay aclarar. En primer lugar, el analista debe tener claro cuál es el sistema.</p>
+<p>Por <strong>sistema</strong> o <strong>estructura</strong> se entenderá una colección de elementos, que en lo sucesivo llamaremos <strong>componentes</strong>, ordenados según un diseño específico con el fin de cumplir aceptablemente determinadas funciones.</p>
+<p>El objetivo principal de esta sección será el cálculo de la <strong>función de estructura</strong>, que determina el estado del sistema como una función de los estados de sus componentes. En otras palabras, procederemos a la construcción de un modelo que represente el tiempo de funcionamiento de un sistema basado en las distribuciones de tiempo de funcionamiento de las unidades que lo componen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Utilidad de la función de estructura." width="400"></p>
+</figure>
+</div>
+<p>El número y el tipo de unidades dentro del sistema físico que seleccionamos como componentes en nuestra representación estructural del sistema puede venir limitado por una serie de factores. Otra cuestión fundamental que hay que tener en cuenta a la hora de construir la función de estructura de un sistema son las relaciones de tipo lógico que guardan entre sí las componentes y también con el propio sistema. Por un lado, en general, salvo que indiquemos otra cosa, supondremos que las componentes funcionan de manera independiente unas de otras. Por otro lado, se supone que el estado de las componentes determina el estado del sistema, sin embargo esto no significa que afirmaciones como las siguientes sean ciertas:</p>
+<ul>
+<li><p><em>Si las componentes de un sistema son fiables al 90%, entonces el sistema es fiable al 90%.</em></p></li>
+<li><p><em>Una cadena es al menos tan fuerte, por tanto tan fiable, como su eslabón más débil.</em></p></li>
+</ul>
+<p>El modo en que el estado y, por tanto, la fiabilidad de cada componente repercute en el sistema, es una información que queda recogida en la función de estructura, es decir representa aquellas relaciones determinísticas entre un sistema y sus componentes.</p>
+<p>Comenzamos el análisis desde un punto de vista estático y determinístico, es decir, por un lado, se considera un sistema en un instante de tiempo fijo, de modo que el estado actual del sistema viene determinado por los estados actuales de sus componentes, sin tener, por tanto, en cuenta la evolución de las componentes y por consiguiente del sistema, a lo largo del tiempo.</p>
+</section>
+<section id="conceptos-básicos" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="conceptos-básicos"><span class="header-section-number">10.2</span> Conceptos básicos</h2>
+<p>Se distingue únicamente entre dos estados: <strong>funcionamiento</strong> y <strong>fallo</strong>. Esta dicotomía se aplica tanto al sistema como a cada una de sus componentes. Para indicar el estado de la <span class="math inline">\(i\)</span>-ésima componente, asignamos una variable indicadora <span class="math inline">\(x_{i}\)</span> a dicha componente <span class="math display">\[
+x_i =
+\begin{cases}
+1 &amp; \text{si la componente } i \text{ está funcionando} \\
+0 &amp; \text{si la componente } i \text{ no está funcionando}
+\end{cases}
+\]</span> para <span class="math inline">\(i\in\{1,\dotsc,n\}\)</span>, donde <span class="math inline">\(n\)</span> es el número de componentes al que nos referimos como <strong>orden</strong> del sistema. A partir de aquí se construye lo que vamos a llamar el <strong>vector estado</strong> del sistema, <span class="math inline">\(x = (x_1,x_2,\dotsc,x_n)\)</span>. El número total de posibilidades para el vector estado es de <span class="math inline">\(2^n\)</span>.</p>
+<p>De la misma forma, se define la variable binaria <span class="math inline">\(\phi\)</span> para indicar el estado del sistema <span class="math display">\[
+\phi =
+\begin{cases}
+1 &amp; \text{si el sistema está funcionando}\\
+0 &amp; \text{si el sistema ha fallado}
+\end{cases}
+\]</span></p>
+<p>En realidad podemos escribir <span class="math inline">\(\phi=\phi(x)\)</span>. La función <span class="math inline">\(\phi(x)\)</span> se llama <strong>función de estructura</strong> del sistema.</p>
+<section id="ejemplo-sistema-en-serie" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="ejemplo-sistema-en-serie"><span class="header-section-number">10.2.1</span> Ejemplo: Sistema en serie</h3>
+<p>Consideremos un sistema formado por 2 componentes cuya lógica es la siguiente: el sistema funciona si todas sus componentes están en funcionamiento. El siguiente cuadro representa todas las posibilidades para el vector estado y en cada caso el valor de la función estructura</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_1\)</span></th>
+<th><span class="math inline">\(x_2\)</span></th>
+<th><span class="math inline">\(\phi(x_1,x_2)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>A partir de este cuadro puede representarse la función de estructura mediante la siguiente expresión <span class="math display">\[
+\phi(x)=\min\{x_1,x_2\},
+\]</span> y dado que los posibles valores de las variables <span class="math inline">\(x_i\)</span> son únicamente 0 y 1, la expresión anterior es equivalente a la siguiente <span class="math display">\[
+\phi(x)=x_1\cdot x_2.
+\]</span></p>
+<p>La manera más usual de representar gráficamente un sistema en serie es mediante lo que llamaremos un diagrama de fiabilidad y, que en este caso es el siguiente</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Sistema en serie." width="400"></p>
+</figure>
+</div>
+<p>Este caso puede extenderse fácilmente si consideramos <span class="math inline">\(n\)</span> unidades en el sistema. En general, la función de estructura de un sistema en serie de orden <span class="math inline">\(n\)</span> puede expresarse <span class="math display">\[
+\phi(x)=\min\{x_1,\dotsc,x_n\},
+\]</span></p>
+<p>o bien <span class="math display">\[
+\phi(x)=\displaystyle\prod_{i=1}^{n} x_i.
+\]</span></p>
+<p><em>Nota</em>: La expresión algebraica de la función de estructura de un sistema no es única, en general.</p>
+</section>
+<section id="ejemplo-sistema-en-paralelo" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="ejemplo-sistema-en-paralelo"><span class="header-section-number">10.2.2</span> Ejemplo: Sistema en paralelo</h3>
+<p>Consideremos ahora un sistema de orden 2 que funciona siempre que haya alguna de sus componentes en funcionamiento. En este caso, las posibilidades para el vector estado y la función estructura quedan recogidas a continuación</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_1\)</span></th>
+<th><span class="math inline">\(x_2\)</span></th>
+<th><span class="math inline">\(\phi(x_1,x_2)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>A partir de aquí, se obtienen las siguientes expresiones equivalentes para la función de estructura correspondiente <span class="math display">\[
+\phi(x)=\max\{x_1,x_2\},
+\]</span> y <span class="math display">\[
+\phi(x)=1-(1-x_1)\cdot(1-x_2).
+\]</span></p>
+<p>Este sistema se representa usualmente en la forma</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura4.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Sistema en paralelo." width="400"></p>
+</figure>
+</div>
+<p>En el caso general de <span class="math inline">\(n\)</span> unidades <span class="math display">\[
+\phi(x)=\max\{x_1,\dotsc,x_n\},
+\]</span></p>
+<p>o bien <span class="math display">\[
+\phi(x)=1-\displaystyle\prod_{i=1}^{n} (1-x_i).
+\]</span></p>
+<p>Por comodidad en la notación, usaremos el símbolo <span class="math inline">\(\coprod\)</span> para representar la operación de la última expresión, es decir</p>
+<p><span class="math display">\[
+\phi(x) = 1-\displaystyle\prod_{i=1}^{n} (1-x_i) = \displaystyle\coprod_{i=1}^{n} x_i.
+\]</span></p>
+</section>
+<section id="ejemplo-sistema-kn" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="ejemplo-sistema-kn"><span class="header-section-number">10.2.3</span> Ejemplo: Sistema <span class="math inline">\(k/n\)</span></h3>
+<p>Se trata de un sistema que funciona siempre que haya <span class="math inline">\(k\)</span> o más componentes funcionando, evidentemente <span class="math inline">\(1\leq k\leq n\)</span>. Como casos particulares, un sistema <span class="math inline">\(1/n\)</span> es un sistema en serie, mientras que un sistema <span class="math inline">\(n/n\)</span> es un sistema en paralelo. En este caso, una manera de representar la función de estructura es la siguiente</p>
+<p><span class="math display">\[
+\phi(\mathbf{x}) =
+\begin{cases}
+1 &amp; \text{si } \mathbf{x}\cdot\mathbf{1} \geq k \\
+0 &amp; \text{si } \mathbf{x}\cdot\mathbf{1} &lt; k
+\end{cases}
+\]</span></p>
+<p>donde <span class="math inline">\(\textbf{1}=(1,1,\dotsc,1)^t\in\mathbb{R}^{n}\)</span>.</p>
+<p>Se dice que una componente <span class="math inline">\(i\)</span>, es <strong>irrelevante</strong> al sistema si la función de estructura es constante en <span class="math inline">\(x_i\)</span>, es decir: <span class="math inline">\(\phi(1_i;x)=\phi(0_i;x)\)</span> para todo <span class="math inline">\((·_i;x)\)</span>. En otro caso, la <span class="math inline">\(i\)</span>-ésima componente es <strong>relevante</strong> al sistema.</p>
+<p>Como ejemplo, observemos el siguiente diagrama de fiabilidad</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura5.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Sistema con componente irrelevante." width="400"></p>
+</figure>
+</div>
+<p>La componente 2 resulta irrelevante al funcionamiento del sistema.</p>
+<p>Un sistema con función de estructura <span class="math inline">\(\phi(x)\)</span> se dice <strong>monótono</strong>, si satisface las siguientes condiciones</p>
+<ul>
+<li><p><span class="math inline">\(\phi(0,0,....,0)=0, \ \phi(1,1,....,1)=1\)</span>.</p></li>
+<li><p>si $ &lt; $, entonces <span class="math inline">\(\phi(\textbf{x}) \leq\phi(\textbf{y})\)</span>.</p></li>
+</ul>
+<p>Esta definición establece que el estado de un sistema monótono no puede empeorarse si el estado de cualquiera de sus componentes ha sido mejorado; además el sistema falla si todas sus componentes han fallado y está operativo si todas sus componentes lo están.</p>
+<p>Un sistema o estructura se dice <strong>coherente</strong>, si es monótono y no tiene componentes irrelevantes.</p>
+<p>La obtención de la función de estructura de un sistema coherente, puede simplificarse eligiendo un elemento <strong>pivote</strong>, por ejemplo la componente <span class="math inline">\(i\)</span>-ésima, y usando la siguiente identidad, cuya validez es fácil de verificar,</p>
+<p><span class="math display">\[
+\phi(\textbf{x})=x_i\cdot\phi((1_i;\textbf{x}))+(1-x_i)\cdot\phi((0_i;\textbf{x}))
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+(1_i;\textbf{x})=(x_1,x_2,\dotsc,x_{i-1},1,x_{i+1},\dotsc,x_n)
+\]</span> es un vector estado en el que la componente <span class="math inline">\(i\)</span>-ésima está operativa y</p>
+<p><span class="math display">\[
+(0_i;\textbf{x})=(x_1,x_2,\dotsc,x_{i-1},0,x_{i+1},\dotsc,x_n)
+\]</span></p>
+<p>es un vector estado en el que la componente <span class="math inline">\(i\)</span>-ésima está fuera de servicio.</p>
+<p><strong>Estructura dual</strong>. Dado un sistema con función de estructura <span class="math inline">\(\phi\)</span> se define su dual como aquel que tiene la siguiente función de estructura</p>
+<p><span class="math display">\[
+\phi^D(\textbf{x})=1-\phi(\textbf{1}-\textbf{x})
+\]</span></p>
+<p>Es fácil comprobar que un sistema en serie de orden <span class="math inline">\(n\)</span> y un sistema en paralelo de orden <span class="math inline">\(n\)</span> son estructuras duales.</p>
+<p><strong>Descomposición modular</strong>. El análisis de fiabilidad de un sistema se simplifica si el sistema se puede particionar en subsistemas que actúan cada uno de ellos como una componente. Tales subsistemas se llaman módulos y la función de estructura del sistema se puede obtener de la siguiente forma. Sea <span class="math inline">\(S=\{1,2,...,n\}\)</span>, se supone un sistema de orden <span class="math inline">\(n\)</span>. Sea una partición de <span class="math inline">\(S\)</span>, es decir <span class="math inline">\(S=\bigcup_{i=1}^m M_i\)</span>, con <span class="math inline">\(M_i\cap M_j =\emptyset\)</span> para <span class="math inline">\(i\neq j\)</span>. Sea <span class="math inline">\(x^{M_i}=(x_j;j\in M_i)\)</span> y <span class="math inline">\(\phi_i(x^{M_i})\)</span> una función binaria monótona definida sobre <span class="math inline">\(x^{M_i}\)</span>, que vale 1 si el módulo <span class="math inline">\(M_i\)</span> funciona y 0 en otro caso. La función de estructura del sistema se puede escribir</p>
+<p><span class="math display">\[
+\phi(\textbf{x})=s(\phi_1(\textbf{x}^{M_1}),\phi_2(\textbf{x}^{M_2}),\dotsc,\phi_m(\textbf{x}^{M_m}))
+\]</span> donde <span class="math inline">\(s\)</span> se llama <em>función organizadora</em> de la estructura del sistema.</p>
+<p>Como ejemplo, calculemos, mediante una descomposición modular, la función de estructura del siguiente sistema</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Descomposición modular." width="400"></p>
+</figure>
+</div>
+<p>Agrupamos las componentes definiendo los módulos <span class="math inline">\(M_1=\{1,3\}\)</span> y <span class="math inline">\(M_2=\{2\}\)</span>. Con esto el sistema se reduce a</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura7.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Sistema simplificado." width="400"></p>
+</figure>
+</div>
+<p>La función de estructura en este caso sería <span class="math display">\[
+\phi(\textbf{x})=s(\phi_1(\textbf{x}^{M_1}),\phi_2(\textbf{x}^{M_2}))=\phi_1(\textbf{x}^{M_1})\cdot\phi_2(\textbf{x}^{M_2})
+\]</span></p>
+<p>Con lo que el problema se ha reducido a calcular las estructuras de composiciones más simples. <span class="math inline">\(M_1\)</span> es un subsistema con estructura en paralelo, con lo cual</p>
+<p><span class="math display">\[
+\phi_1(\textbf{x}^{M_1})=1-(1-x_1)\cdot(1-x_3)
+\]</span></p>
+<p>mientras que <span class="math inline">\(M_2\)</span> es un sistema unitario, con lo que el resultado final es</p>
+<p><span class="math display">\[
+\phi(\textbf{x})=(1-(1-x_1)\cdot(1-x_3))\cdot x_2
+\]</span></p>
+<p><strong>Camino</strong>. Un vector estado <span class="math inline">\(\textbf{x}\)</span> se dice un <strong>vector camino</strong> si <span class="math inline">\(\phi(\textbf{x})= 1\)</span>, es decir si la configuración dada por <span class="math inline">\(\textbf{x}\)</span> implica el funcionamiento del sistema. El conjunto de componentes activas en un vector camino, <span class="math inline">\(A(\textbf{x})=\{i: x_i=1\}\)</span>, se llama <strong>conjunto camino</strong>. Si además <span class="math inline">\(\phi(\textbf{y})= 0\)</span> para todo <span class="math inline">\(\textbf{y}&lt;\textbf{x}\)</span>, entonces <span class="math inline">\(\textbf{x}\)</span> se llama un <strong>vector camino minimo</strong>, y el correspondiente <span class="math inline">\(A(\textbf{x})\)</span> se llama <strong>conjunto camino minimal</strong>, y representa el menor conjunto de elementos cuyo funcionamiento asegura el funcionamiento del sistema.</p>
+<p><em>Nota</em>: El funcionamiento de todas las unidades en al menos un conjunto camino minimal implica el funcionamiento del sistema. Como consecuencia se puede representar cualquier sistema coherente como una conexión en paralelo de sistemas en serie, cada uno de ellos formado por un conjunto camino minimal. Explícitamente tenemos,</p>
+<p><span class="math display">\[
+\phi(\textbf{x})=\displaystyle\coprod_{j=1}^{m}\displaystyle\prod_{i\in A_j} x_i
+\]</span></p>
+<p>donde <span class="math inline">\(A_1, \ A_2, \dotsc, A_m\)</span> son todos los conjuntos camino minimales del sistema.</p>
+<p><strong>Corte</strong>. Un vector estado <span class="math inline">\(\textbf{x}\)</span> se dice que es un <strong>vector de corte</strong> si <span class="math inline">\(\phi(\textbf{x})= 0\)</span>, es decir, si la configuración dada por <span class="math inline">\(\textbf{x}\)</span> conlleva el fallo del sistema. En este caso, el conjunto de componentes inactivas en <span class="math inline">\(\textbf{x}\)</span>, <span class="math inline">\(C(\textbf{x})=\{i: x_i=0\}\)</span> se llama <strong>conjunto de corte</strong>. Si <span class="math inline">\(\phi(\textbf{y})= 1\)</span> para todo <span class="math inline">\(\textbf{y}&gt;\textbf{x}\)</span>, entonces <span class="math inline">\(\textbf{x}\)</span> es un <strong>vector de corte minimal</strong> y el correspondiente <span class="math inline">\(C(\textbf{x})\)</span> es lo que se llama <strong>conjunto de corte mínimo</strong>, y representa el menor conjunto de componentes cuyo fallo causa el fallo del sistema.</p>
+<p><em>Nota</em>: El funcionamiento de al menos una unidad en todos los conjuntos de corte minimal asegura el funcionamiento del sistema. Por lo tanto, se puede representar cualquier sistema coherente como una conexión en serie de estructuras en paralelo, cada uno de ellos formado por un conjunto de corte mínimo. En este caso, si disponemos de todos los conjuntos de corte minimal <span class="math inline">\(C_1, \ C_2, \dotsc, C_r\)</span>, tenemos</p>
+<p><span class="math display">\[
+\phi(\textbf{x})=\displaystyle\prod_{k=1}^{r}\displaystyle\coprod_{l\in C_k} x_l
+\]</span></p>
+</section>
+</section>
+<section id="representación-gráfica-de-la-lógica-de-un-sistema" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="representación-gráfica-de-la-lógica-de-un-sistema"><span class="header-section-number">10.3</span> Representación gráfica de la lógica de un sistema</h2>
+<p>Existen diferentes maneras de representar gráficamente las relaciones lógicas entre las componentes de un sistema y con el propio sistema que facilitan el cálculo de la fiabilidad.</p>
+<section id="diagramas-de-bloque-rbd" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="diagramas-de-bloque-rbd"><span class="header-section-number">10.3.1</span> Diagramas de bloque (RBD)</h3>
+<p>Constituyen la forma más natural de representación gráfica ya que son la más próxima al esquema funcional del sistema.</p>
+<p>Cada bloque del diagrama representa un elemento (material o suceso) o una función. Aquellos bloques cuyo fallo implica el fallo del sistema se colocan en serie, mientras que aquellos bloques cuyo fallo no implica el fallo del sistema salvo en combinación con otros bloques se sitúan en paralelo en la representación.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura8.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Sistema de audio." width="400"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="fiabilidad-de-sistemas" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="fiabilidad-de-sistemas"><span class="header-section-number">10.4</span> Fiabilidad de sistemas</h2>
+<p>En este apartado, vamos a relacionar la fiabilidad de un sistema con las fiabilidades de sus componentes. Estudiaremos métodos para obtener de forma exacta la fiabilidad de un sistema, pero como esto es difícil y a veces imposible para sistemas complejos, obtendremos en su lugar, útiles cotas en términos de los caminos mínimos y los cortes mínimos.</p>
+<section id="fiabilidad-de-sistemas-de-componentes-independientes" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="fiabilidad-de-sistemas-de-componentes-independientes"><span class="header-section-number">10.4.1</span> Fiabilidad de sistemas de componentes independientes</h3>
+<p>Supongamos que el estado de la <span class="math inline">\(i\)</span>-ésima componente es una variable aleatoria binaria, es decir <span class="math display">\[
+X_i =
+\begin{cases}
+1 &amp; \text{con probabilidad } p_i\\ 0 &amp; \text{con probabilidad } 1-p_i
+\end{cases}
+\]</span></p>
+<p>donde 1 y 0 corresponden a los estados de funcionamiento y fallo respectivamente de la componente <span class="math inline">\(i\)</span>-ésima, y <span class="math inline">\(p_i\)</span> es lo que se llama <strong>fiabilidad</strong> de la componente <span class="math inline">\(i\)</span>-ésima. Ahora el vector estado del sistema <span class="math inline">\(X = (X_1,X_2,...,X_n)\)</span>, es un vector aleatorio y la función de estructura <span class="math inline">\(\phi(X)= \phi(X_1,X_2,...,X_n)\)</span>, es también una variable aleatoria binaria.</p>
+<p>Se define la fiabilidad del sistema como la probabilidad de que <span class="math inline">\(\phi(X)=1\)</span>, es decir <span class="math display">\[
+R=P\{\phi(X)=1\}=E[\phi(X)]
+\]</span></p>
+<p>Si se supone que todas las componentes son mutuamente independientes, por tanto, la distribución conjunta de <span class="math inline">\(X_1,X_2,...,X_n\)</span> está completamente determinada por las fiabilidades <span class="math inline">\(p_1,p_2,...,p_n\)</span>, <span class="math inline">\(R = R(p_1,p_2,...,p_n) = R(\textbf{p})\)</span>.</p>
+<section id="ejemplo-sistema-en-serie-1" class="level4" data-number="10.4.1.1">
+<h4 data-number="10.4.1.1" class="anchored" data-anchor-id="ejemplo-sistema-en-serie-1"><span class="header-section-number">10.4.1.1</span> Ejemplo: Sistema en serie</h4>
+<p>Recordamos que la función estructura de un sistema en serie viene dada por <span class="math inline">\(\phi(\textbf{X})=\displaystyle\prod_{i=1}^n X_i\)</span></p>
+<p>Si tomamos esperanza tendríamos <span class="math inline">\(R(\textbf{p}) = E[\phi(\textbf{X})] = \displaystyle\prod_{i=1}^n E[X_i] = \displaystyle\prod_{i=1}^n p_i\)</span></p>
+<p>Dado que <span class="math inline">\(p_i\leq 1\)</span>, se tiene que <span class="math inline">\(R \leq p_i\)</span> para todo <span class="math inline">\(i\)</span>, es decir, la fiabilidad del sistema es menor que la de cualquiera de sus componentes individual.</p>
+</section>
+<section id="ejemplo-sistema-en-paralelo-1" class="level4" data-number="10.4.1.2">
+<h4 data-number="10.4.1.2" class="anchored" data-anchor-id="ejemplo-sistema-en-paralelo-1"><span class="header-section-number">10.4.1.2</span> Ejemplo: Sistema en paralelo</h4>
+<p>Por su parte, la función estructura de un sistema en paralelo es <span class="math inline">\(\phi(x)=1-\displaystyle\prod_{i=1}^n (1-x_i) = \displaystyle\coprod_{i=1}^n x_i\)</span></p>
+<p>Tomando esperanza <span class="math inline">\(R(\textbf{p}) = E[\phi(\textbf{X})] = 1-\displaystyle\prod_{i=1}^n E[1-X_i] = 1-\displaystyle\prod_{i=1}^n (1-p_i)\)</span></p>
+<p>Dado que <span class="math inline">\(p_i\leq 1\)</span>, se puede comprobar que <span class="math inline">\(R \geq p_i\)</span> para todo <span class="math inline">\(i\)</span>, es decir, la fiabilidad de una estructura en paralelo es mayor que la de cualquiera de sus componentes individuales.</p>
+</section>
+<section id="ejemplo-sistema-kn-con-componentes-idénticas" class="level4" data-number="10.4.1.3">
+<h4 data-number="10.4.1.3" class="anchored" data-anchor-id="ejemplo-sistema-kn-con-componentes-idénticas"><span class="header-section-number">10.4.1.3</span> Ejemplo: Sistema <span class="math inline">\(k/n\)</span> con componentes idénticas</h4>
+<p>Sea un sistema <span class="math inline">\(k/n\)</span> cuyas componentes tienen fiabilidades <span class="math inline">\(p_i = p\)</span> para todo <span class="math inline">\(i\)</span>. El sistema funciona si al menos <span class="math inline">\(k\)</span> de las <span class="math inline">\(n\)</span> componentes funcionan, la función de fiabilidad viene dada por <span class="math inline">\(R(p)=\displaystyle\sum_{m=k}^{n} {n \choose m} p^m(1-p)^{n-m}\)</span></p>
+<p>El siguiente resultado establece que un sistema monótono será más fiable cuanto mayores sean las fiabilidades de sus componentes.</p>
+<p><strong>Teorema</strong>. Sea <span class="math inline">\(R(\textbf{p})\)</span> la fiabilidad de un sistema monótono de componentes independientes. Entonces <span class="math inline">\(R(\textbf{p})\)</span> es una función creciente de <span class="math inline">\(\textbf{p}=( p_1,p_2,...,p_n)\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="tiempo-de-vida-del-sistema" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="tiempo-de-vida-del-sistema"><span class="header-section-number">10.5</span> Tiempo de vida del sistema</h2>
+<p>Hasta ahora, todos nuestros cálculos de fiabilidad eran estáticos, es decir el factor tiempo no era tenido en cuenta. A partir de ahora vamos a estudiar la fiabilidad de un sistema como función del tiempo, para ello establecemos las siguientes hipótesis:</p>
+<ul>
+<li><p>H1. La componente <span class="math inline">\(i\)</span>-ésima tiene tiempo de vida <span class="math inline">\(T_1\)</span>, con función de distribución conocida, <span class="math inline">\(F_i(t)\)</span> para todo <span class="math inline">\(i=1,2,...,n\)</span>, <span class="math inline">\(P\{T_i &lt; 0\}=0\)</span>.</p></li>
+<li><p>H2. Una componente que falla no es renovada o reparada. Si falla permanece en ese estado para siempre.</p></li>
+</ul>
+<p>Bajo estas condiciones, se define una variable aleatoria binaria <span class="math inline">\(X_1(t)\)</span> de la siguiente forma <span class="math display">\[
+X_i(t) =
+\begin{cases}
+1 &amp; \text{si } T_i&gt;t\\
+0 &amp; \text{si } T_i\leq t
+\end{cases}
+\]</span></p>
+<p>es decir vale 1 si la componente <span class="math inline">\(i\)</span>-ésima está funcionando después del tiempo <span class="math inline">\(t\)</span>. Entonces, a partir de ahora, el vector de estado del sistema en el tiempo <span class="math inline">\(t\)</span> viene dado por <span class="math inline">\(X(t)=(X_1(t), X_2(t),..., X_n(t))\)</span>, es un vector aleatorio que depende del tiempo.</p>
+<p><strong>Definición.</strong> Se define el tiempo de vida del sistema, <span class="math inline">\(T\)</span>, como el menor tiempo que hace que la función de estructura valga 0, es decir el tiempo en el que ocurre el primer fallo del sistema, <span class="math display">\[
+T=\inf\{t:\phi(\textbf{X}(t))=0\}
+\]</span></p>
+<p><strong>Teorema.</strong> Sea <span class="math inline">\(R(\textbf{p})=E[\phi(\textbf{X})]\)</span> la fiabilidad de un sistema monótono, y sea la siguiente función <span class="math display">\[
+R(t)=r(\overline{F}_1(t),\overline{F}_2(t),...,\overline{F}_n(t)),
+\]</span></p>
+<p>donde <span class="math inline">\(\overline{F}(t) = P\{T_i &gt; t\}\)</span> para todo <span class="math inline">\(i=1,2,....,n\)</span>. Entonces la probabilidad de que el tiempo de vida del sistema, <span class="math inline">\(T\)</span>, exceda a <span class="math inline">\(t\)</span>, es decir <span class="math inline">\(\overline{F}(t)\)</span>, es igual a <span class="math inline">\(R(t)\)</span>.</p>
+<section id="ejemplo.-sistema-en-serie" class="level4" data-number="10.5.0.1">
+<h4 data-number="10.5.0.1" class="anchored" data-anchor-id="ejemplo.-sistema-en-serie"><span class="header-section-number">10.5.0.1</span> Ejemplo. Sistema en serie</h4>
+<p>Supongamos un sistema formado por <span class="math inline">\(n\)</span> componentes, donde el funcionamiento del sistema depende del funcionamiento de todas las componentes, si una falla, el sistema falla. La fiabilidad de un sistema de este tipo viene dada por <span class="math inline">\(R(\textbf{p})=\displaystyle\prod_{i=1}^{n} p_i\)</span>.</p>
+<p>Aplicando el teorema anterior, obtenemos <span class="math display">\[
+\overline{F}(t)=R(\overline{F}_1(t),\overline{F}_2(t),\dotsc,\overline{F}_n(t))=\displaystyle\prod_{i=1}^{n} \overline{F}_i(t)= \displaystyle\prod_{i=1}^{n}[1-F_i(t)]
+\]</span></p>
+<p>de modo que la función de distribución del tiempo de vida del sistema viene dada por: <span class="math display">\[
+F(t)=1-\displaystyle\prod_{i=1}^{n}[1-F_i(t)],
+\]</span></p>
+<p>que es la función de distribución del mínimo de <span class="math inline">\(n\)</span> variables aleatorias independientes. Entonces en el caso de un sistema en serie, <span class="math inline">\(T=\min\{T_1,T_2,...,T_n\}\)</span>, es decir, el tiempo de vida de un sistema en serie es el mínimo de los tiempos de vida de sus componentes.</p>
+</section>
+<section id="ejemplo.-sistema-en-paralelo" class="level4" data-number="10.5.0.2">
+<h4 data-number="10.5.0.2" class="anchored" data-anchor-id="ejemplo.-sistema-en-paralelo"><span class="header-section-number">10.5.0.2</span> Ejemplo. Sistema en paralelo</h4>
+<p>Se supone un sistema formado por <span class="math inline">\(n\)</span> componentes que falla cuando fallen todas las componentes, y funciona si al menos una de ellas está en funcionamiento. La fiabilidad de este sistema viene dada por: <span class="math inline">\(R(\textbf{p})=1-\displaystyle\prod_{i=1}^{n} (1-p_i)\)</span>.</p>
+<p>Utilizando el teorema llegamos a la siguiente expresión para la función de distribución del tiempo de vida del sistema <span class="math display">\[
+F(t)=\displaystyle\prod_{i=1}^{n} F_i(t),
+\]</span></p>
+<p>que es la función de distribución del máximo de <span class="math inline">\(n\)</span> variables aleatorias independientes, <span class="math inline">\(T=\max\{T_1,T_2,...,T_n\}\)</span>. El tiempo de vida de un sistema en paralelo es el máximo de los tiempos de vida de sus componentes.</p>
+</section>
+<section id="ejemplo.-sistema-kn-con-componentes-idénticas" class="level4" data-number="10.5.0.3">
+<h4 data-number="10.5.0.3" class="anchored" data-anchor-id="ejemplo.-sistema-kn-con-componentes-idénticas"><span class="header-section-number">10.5.0.3</span> Ejemplo. Sistema <span class="math inline">\(k/n\)</span> con componentes idénticas</h4>
+<p>El sistema funciona si al menos <span class="math inline">\(k\)</span> de las <span class="math inline">\(n\)</span> componentes funcionan. La función de fiabilidad viene dada por <span class="math inline">\(R(p)=\displaystyle\sum_{m=k}^{n} {n \choose m} p^m(1-p)^{n-m}\)</span></p>
+<p>Aplicando nuevamente el teorema, <span class="math display">\[
+F(t)=\displaystyle\sum_{i=n-k+1}^{n} {n \choose i} (G(t))^{i}(1-G(t))^{n-i},
+\]</span></p>
+<p>que puede entenderse como la función de distribución del estadístico ordenado de orden <span class="math inline">\(n-k+1\)</span>, es decir <span class="math inline">\(T_{n-k+1}\)</span>. <span class="math inline">\(G\)</span> representa la función de distribución común a todas las <span class="math inline">\(T_i\)</span>.</p>
+</section>
+<section id="ejemplo.-obtención-del-tiempo-de-vida-del-sistema-mediante-descomposición-modular" class="level4" data-number="10.5.0.4">
+<h4 data-number="10.5.0.4" class="anchored" data-anchor-id="ejemplo.-obtención-del-tiempo-de-vida-del-sistema-mediante-descomposición-modular"><span class="header-section-number">10.5.0.4</span> Ejemplo. Obtención del tiempo de vida del sistema mediante descomposición modular</h4>
+<p>Consideremos el sistema del siguiente diagrama</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Fig_times.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Tiempo fallo de un sistema modular." width="400"></p>
+</figure>
+</div>
+<p>En este caso el tiempo de vida del sistema se obtiene de la siguiente forma <span class="math display">\[
+T=\max\{T_5,\min\{T_1,T_4,\max\{T_2,T_3\}\}\}
+\]</span> cuya función de distribución es <span class="math display">\[
+F=F_4F_5+F_2F_3F_5-F_2F_3F_4F_5+F_1F_5-F_1F_4F_5-F_1F_2F_3F_5+F_1F_2F_3F_4F_5.
+\]</span></p>
+</section>
+</section>
+<section id="medidas-de-importancia-de-una-componente" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="medidas-de-importancia-de-una-componente"><span class="header-section-number">10.6</span> Medidas de importancia de una componente</h2>
+<p>La importancia de la fiabilidad de una componente depende de dos factores fundamentales</p>
+<ul>
+<li>localización de la componente dentro del sistema</li>
+<li>valor de la fiabilidad de la componente en cuestión</li>
+</ul>
+<p>En cualquier caso, sería de gran utilidad, valorar toda esta información de alguna manera para tener una medida cuantitativa de la <strong>importancia</strong> de cada componente. Esta medida debería, por ejemplo, identificar las componentes que, siendo mejoradas, incrementarían al máximo la fiabilidad del sistema, o bien, establecer un orden, en la etapa de reparación del sistema, según el cual inspeccionar las componentes con objeto de determinar cuáles de ellas podrían haber causado el fallo del sistema.</p>
+<p>Existen numerosas formas de medir la importancia de una componente.</p>
+<p>Consideremos un sistema con <span class="math inline">\(n\)</span> componentes, sea <span class="math inline">\(p_i(t)\)</span> la fiabilidad de la componente <span class="math inline">\(i\)</span>-ésima en el tiempo <span class="math inline">\(t\)</span>, para <span class="math inline">\(i=1,2,...,n\)</span>. Sea <span class="math inline">\(R(\textbf{p}(t)) = (p_1(t), p_2(t),..., p_n(t))\)</span> la función de fiabilidad del sistema en el tiempo <span class="math inline">\(t\)</span>.</p>
+<section id="medida-de-importancia-de-birnbaum-ib" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="medida-de-importancia-de-birnbaum-ib"><span class="header-section-number">10.6.1</span> Medida de importancia de Birnbaum (<span class="math inline">\(I^{B}\)</span>)</h3>
+<p>La medida de Birnbaum se obtiene como la derivada parcial de la función de fiabilidad con respecto a <span class="math inline">\(p_i(t)\)</span> <span class="math display">\[
+I^B(i|t)=\dfrac{\partial R(\textbf{p}(t))}{\partial p_i(t)}
+\]</span></p>
+<p>Si <span class="math inline">\(I^B(i|t)\)</span> es grande, un pequeño cambio en la fiabilidad de la componente <span class="math inline">\(i\)</span> infiere un gran cambio en la fiabilidad del sistema en el tiempo <span class="math inline">\(t\)</span>. Usando la descomposición pivotal de la función de fiabilidad, tendríamos la siguiente expresión equivalente</p>
+<p><span class="math display">\[
+I^B(i|t)=R(1_i;\textbf{p}(t))-R(0_i:\textbf{p}(t)).
+\]</span></p>
+<p>Como la función de estructura del sistema toma sólo valores 1 y 0, esta diferencia se puede expresar <span class="math display">\[
+I^B(i|t)=P\{\Phi(1_i;\textbf{X}(t))-\Phi(0_i;\textbf{X}(t))=1\},
+\]</span></p>
+<p>esto es, esta medida da la probabilidad de que <span class="math inline">\((1_i;\textbf{X}(t))\)</span> sea un vector camino crítico para la componente <span class="math inline">\(i\)</span> en el instante <span class="math inline">\(t\)</span>, esto es <span class="math inline">\(\Phi(1_i;\textbf{X}(t)) = 1\)</span>, mientras que <span class="math inline">\(\Phi(0_i;\textbf{X}(t)) = 0\)</span>. Diremos en este caso que la componente <span class="math inline">\(i\)</span> es crítica para el sistema, esto significa que dado el estado del resto de componentes, el sistema está funcionando si y sólo si la componente <span class="math inline">\(i\)</span> funciona. Notemos que el hecho de que la componente <span class="math inline">\(i\)</span> sea crítica para el sistema no dice nada acerca del estado de dicha componente, más bien concierne al estado del resto de componentes en el sistema. Así, en un sistema en serie, una componente resulta crítica para el sistema si el resto de componentes están operativas, ya que de otro modo, el estado de esta componente sería irrelevante. Del mismo modo, en un sistema en paralelo, una componente es crítica para el sistema únicamente en el caso de que todas las demás hayan fallado.</p>
+<p>En otras palabras, la medida de Birnbaum de importancia de la componente <span class="math inline">\(i\)</span> en el tiempo <span class="math inline">\(t\)</span>, es igual a la probabilidad de que el sistema.</p>
+</section>
+<section id="medida-de-importancia-crítica-icr" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="medida-de-importancia-crítica-icr"><span class="header-section-number">10.6.2</span> Medida de importancia crítica (<span class="math inline">\(I^{CR}\)</span>)</h3>
+<p>Sea <span class="math inline">\(C(1_i; \textbf{X}(t))\)</span> el suceso que indica que el sistema está en el tiempo <span class="math inline">\(t\)</span> en un estado en el que la componente <span class="math inline">\(i\)</span> es crítica. La probabilidad de este suceso es la medida de Birnbaum de dicha componente. Como las componentes en el sistema son independientes, este suceso es independiente del estado de la componente <span class="math inline">\(i\)</span> en el instante <span class="math inline">\(t\)</span>. La probabilidad de que la componente <span class="math inline">\(i\)</span> sea crítica para el sistema y simultáneamente esta componente esté no operativa en el tiempo <span class="math inline">\(t\)</span> es por tanto <span class="math display">\[
+P[C(1_i;\textbf{X}(t))\cap\{X_i(t)=0\}]=I^B(i|t)(1-p_i(t)).
+\]</span></p>
+<p>Definimos <strong>medida de importancia crítica</strong> de la componente <span class="math inline">\(i\)</span> en el tiempo <span class="math inline">\(t\)</span> a la probabilidad de que la componente <span class="math inline">\(i\)</span> sea crítica para el sistema y que no esté operativa en el tiempo <span class="math inline">\(t\)</span>, dado que el sistema ha fallado en el tiempo <span class="math inline">\(t\)</span>. En otras palabras, esta medida nos da la probabilidad de que la componente <span class="math inline">\(i\)</span> haya causado el fallo del sistema dado que este ha fallado en el tiempo <span class="math inline">\(t\)</span>. Cuando la componente <span class="math inline">\(i\)</span> es reparada, el sistema volverá a funcionar de nuevo. <span class="math display">\[
+I^{CR}(i|t)=P[C(1_i;\textbf{X}(t))\cap\{X_i(t)=0\}|\Phi(\textbf{X}(t))=0]=\dfrac{I^B(i|t)(1-p_i(t))}{1-R(\textbf{p}(t))}
+\]</span></p>
+</section>
+<section id="medida-de-capacidad-de-mejora-iip" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="medida-de-capacidad-de-mejora-iip"><span class="header-section-number">10.6.3</span> Medida de capacidad de mejora (<span class="math inline">\(I^{IP}\)</span>)</h3>
+<p>Consideremos un sistema con función de fiabilidad <span class="math inline">\(R(\textbf{p}(t))\)</span>, en ocasiones resulta interesante investigar el incremento producido en esta función de fiabilidad si una componente <span class="math inline">\(i\)</span> es reemplazada por una componente perfecta, es decir <span class="math inline">\(p_i(t) = 1\)</span>. En este sentido definimos <span class="math display">\[
+I^{IP}(i|t) = R(1_i;\textbf{p}(t))-R(\textbf{p}(t)).
+\]</span></p>
+<p>La relación con las medidas anteriores sería</p>
+<ul>
+<li><span class="math inline">\(I^{IP}(i|t)=I^{B}(i|t)(1-p_i(t))\)</span></li>
+<li><span class="math inline">\(I^{IP}(i|t)=I^{CR}(i|t)(1-R(\textbf{p}(t)))\)</span></li>
+</ul>
+</section>
+<section id="comparación-de-medidas" class="level3" data-number="10.6.4">
+<h3 data-number="10.6.4" class="anchored" data-anchor-id="comparación-de-medidas"><span class="header-section-number">10.6.4</span> Comparación de medidas</h3>
+<p>Para comparar estas medidas, sugerimos, en primer lugar evaluar todas ellas aplicándolas a sistemas clásicos como sistema en serie, sistema en paralelo y sistema <span class="math inline">\(k/n\)</span>. Considerar <span class="math inline">\(k = 2\)</span> y <span class="math inline">\(n = 3\)</span>.</p>
+<p>Cuando analizamos un sistema concreto, deberíamos elegir la medida más interesante para los propósitos particulares de cada caso. Si estamos interesados en identificar la componente que debiera ser mejorada para incrementar la fiabilidad del sistema, las más apropiadas son <span class="math inline">\(I^B\)</span> y <span class="math inline">\(I^{IP}\)</span>. Por otra parte, si lo que buscamos es identificar aquella componente que tiene la mayor probabilidad de causar el fallo del sistema, la medida más apropiada es <span class="math inline">\(I^{CR}\)</span>.</p>
+</section>
+</section>
+<section id="redundancia" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="redundancia"><span class="header-section-number">10.7</span> Redundancia</h2>
+<p>En algunas estructuras, el funcionamiento de unidades simples (componentes o subsistemas) puede ser de mucha más importancia para la capacidad del sistema que en otras. Por ejemplo, si una unidad simple está dispuesta en serie con el resto del sistema, el fallo de esa componente implica el fallo del sistema. Hay dos formas de aumentar la fiabilidad del sistema en tales situaciones,</p>
+<ol type="1">
+<li><p>usar unidades muy altamente fiables en los lugares críticos del sistema, o</p></li>
+<li><p>introducir redundancia en esos puestos, es decir introducir una o más unidades de reserva.</p></li>
+</ol>
+<p>El tipo de <strong>redundancia</strong> obtenida reemplazando la unidad importante por dos o más unidades funcionando en paralelo, se llama <strong>redundancia activa</strong>.</p>
+<p>Las unidades en reserva pueden mantenerse en <em>standby</em>, es decir, la primera de ellas es activada cuando la que está operativa falla, si las unidades en reserva se mantienen de forma que no es posible el fallo durante el periodo de inactividad, tenemos lo que se llama <strong>redundancia pasiva</strong>.</p>
+<p>A veces la unidad en <em>standby</em> soporta cierta carga de manera que es posible que falle durante el periodo de “inactividad”, entonces se habla de <strong>redundancia parcialmente cargada</strong>.</p>
+<p><strong>Teorema.</strong> Sea una función de estructura <span class="math inline">\(\Phi\)</span>. Sea <span class="math inline">\(S\)</span> el sistema obtenido disponiendo en paralelo <span class="math inline">\(k\)</span> módulos idénticos con estructura <span class="math inline">\(\Phi\)</span>. Sea <span class="math inline">\(C\)</span> el sistema obtenido reemplazando dada componente de la estructura <span class="math inline">\(\Phi\)</span> por <span class="math inline">\(k\)</span> componentes idénticas en paralelo. Entonces, si la estructura <span class="math inline">\(\Phi\)</span> es monótona, los sistemas <span class="math inline">\(S\)</span> y <span class="math inline">\(C\)</span> tienen función de estructura monótona y la fiabilidad de <span class="math inline">\(C\)</span> es mayor o igual que la de <span class="math inline">\(S\)</span>.</p>
+<p><em>Nota</em>: Este resultado, que damos sin demostración, justifica que a efectos de la fiabilidad del sistema, redundancia en componentes es superior a redundancia en estructura. Como ilustración vemos el siguiente ejemplo.</p>
+<section id="ejemplo" class="level4" data-number="10.7.0.1">
+<h4 data-number="10.7.0.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">10.7.0.1</span> Ejemplo</h4>
+<p>Supongamos un montaje serie/paralelo, con componentes con igual fiabilidad de valor <span class="math inline">\(p\)</span>, <span class="math inline">\(0 &lt; p &lt; 1\)</span>, como el de la siguiente figura</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura9.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Sistema serie/paralelo." width="400"></p>
+</figure>
+</div>
+<p>El sistema <span class="math inline">\(S\)</span>, redundancia en estructura, vendría dado por el diagrama siguiente</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura10.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Redundancia en estructura." width="400"></p>
+</figure>
+</div>
+<p>Llamemos <span class="math inline">\(R_1(p)\)</span> a la función de fiabilidad de este sistema, que podemos obtener fácilmente, <span class="math inline">\(R_1(p) = 4p^2 -2p^3 - 4p^4 + 4p^5 - p^6\)</span>.</p>
+<p>Por su parte la estructura obtenida duplicando en componentes resulta en el siguiente diagrama,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura11.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Redundancia en componentes." width="400"></p>
+</figure>
+</div>
+<p>La correspondiente función de estructura vendría dada por <span class="math inline">\(R_2(p) = 8p^3 - 12p^4 +  6p^5 - p^6\)</span>. Para comprobar el resultado del Teorema en este ejemplo presentamos la siguiente gráfica, que contiene conjuntamente las funciones de fiabilidad <span class="math inline">\(R_1\)</span> y <span class="math inline">\(R_2\)</span>, y donde puede comprobarse que para cualquier valor de <span class="math inline">\(p\)</span>, la primera estructura es más ventajosa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Cap1_Figura12.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Fiabilidad de un sistema de componentes idénticas, con redundancia." width="400"></p>
+</figure>
+</div>
+</section>
+<section id="ejemplo-redundancia-activa" class="level4" data-number="10.7.0.2">
+<h4 data-number="10.7.0.2" class="anchored" data-anchor-id="ejemplo-redundancia-activa"><span class="header-section-number">10.7.0.2</span> Ejemplo: Redundancia activa:</h4>
+<ul>
+<li><em>Montaje serie-paralelo</em></li>
+</ul>
+<p>Tenemos <span class="math inline">\(n\)</span> conjuntos de componentes montadas en serie y estas a su vez están formadas por <span class="math inline">\(p\)</span> componentes conectadas en paralelo. Es decir, introducimos redundancia activa en cada una de las componentes. Vamos a llamar a cada subsistema en paralelo una etapa del sistema.</p>
+<p>En este caso podemos definir las siguientes funciones binarias: <span class="math display">\[
+x_{ij}(t) =
+\begin{cases}
+1 &amp; \text{si la componente } ij \text{ está funcionando (con prob. $p_{ij}$)}\\
+0 &amp; \text{en otro caso (con probabilidad $1-p_{ij}$)}
+\end{cases}
+\]</span></p>
+<p><span class="math inline">\(\forall i\in\{1,2,\dotsc,p\}\)</span> y <span class="math inline">\(\forall j\in\{1,2,\dotsc,n\}\)</span>. Puede considerarse una extensión del esquema anterior en el sentido de que el número de componentes en reserva no tiene que ser el mismo para todas las etapas del sistema. Si fuese así, definimos <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(\forall i\in\{1,2,\dotsc,p\}\)</span> y <span class="math inline">\(\forall j\in\{1,2,\dotsc,n\}\)</span>, pero si en la posición <span class="math inline">\(ij\)</span> no existe ninguna componente, <span class="math inline">\(p_{ij}\)</span> debe ser igual a 0.</p>
+<p>La fiabilidad es el producto de las fiabilidades de cada etapa (ya que es en serie) y cada etapa es una estructura en paralelo, entonces: <span class="math display">\[
+R(t) = \displaystyle\prod_{j=1}^{n}[1-\displaystyle\prod_{i=1}^{p}(1-R_{ij}(t))],
+\]</span></p>
+<p>donde <span class="math inline">\(R_{ij}(t)\)</span> representa la fiabilidad del <span class="math inline">\(j\)</span>-ésimo elemento <span class="math inline">\((j=1,2,...,n)\)</span> en la etapa <span class="math inline">\(i\)</span>-ésima <span class="math inline">\((i=1,2,...,p)\)</span>.</p>
+<p>Si <span class="math inline">\(\tau_1\)</span> es el tiempo de vida del sistema serie-paralelo, y <span class="math inline">\(T_{ij}\)</span>, el tiempo de vida de la componente <span class="math inline">\(ij\)</span>, tenemos que <span class="math display">\[
+\tau_1 = \min\{\text{tiempos de vida de los } n \text{ conjuntos de componentes}\}
+\]</span> <span class="math display">\[
+=\min\{\max\{T_{11},...,T_{p1}\},\max\{T_{12},...,T_{p2}\},\dotsc,\max\{T_{1n},...,T_{pn}\}\}.
+\]</span></p>
+<ul>
+<li><em>Montaje paralelo-serie</em></li>
+</ul>
+<p>Tenemos <span class="math inline">\(n\)</span> componentes montadas en serie y estas a su vez están montadas en paralelo con otras <span class="math inline">\(n\)</span> componentes montadas en serie, y así sucesivamente hasta un número finito que llamaremos <span class="math inline">\(p\)</span>. En este caso estamos introduciendo redundancia activa en todo el sistema.</p>
+<p>Ahora tenemos p ramas en serie, con n elementos cada una, luego la función de fiabilidad es <span class="math display">\[
+R(t) = 1-\displaystyle\prod_{i=1}^{p}[1-\displaystyle\prod_{j=1}^{n}(R_{ij}(t))],
+\]</span></p>
+<p>Si <span class="math inline">\(\tau_2\)</span> el tiempo de vida del sistema paralelo-serie, entonces: <span class="math display">\[
+\tau_2 = \max\{\text{tiempos de vida de cada una de las } n \text{ componentes}\}
+\]</span> <span class="math display">\[
+=\max\{\min\{T_{11},...,T_{1n}\},\min\{T_{21},...,T_{2n}\},\dotsc,\min\{T_{p1},...,T_{pn}\}\}.
+\]</span></p>
+<p>Vamos a ver que <span class="math inline">\(\tau_1\geq\tau_2\)</span>, lo que significa que cuando hay redundancia activa, un montaje serie-paralelo es al menos tan bueno como un montaje paralelo-serie. Se puede comprobar las siguientes desigualdades</p>
+<p><span class="math display">\[
+\left.
+        \begin{array}{rcl}
+            \tau_2\leq\max\{T_{11},T_{21}\dotsc,T_{p1}\} \\
+            \tau_2\leq\max\{T_{12},T_{22}\dotsc,T_{p2}\} \\
+            .......................................... \\
+            \tau_2\leq\max\{T_{1n},T_{2n}\dotsc,T_{pn}\}
+        \end{array}
+        \right\}
+\]</span></p>
+<p>entonces, por definición de mínimo, se tiene que <span class="math inline">\(\tau_2\leq\tau_1\)</span>, cqd.</p>
+</section>
+<section id="ejemplo-redundancia-pasiva" class="level4" data-number="10.7.0.3">
+<h4 data-number="10.7.0.3" class="anchored" data-anchor-id="ejemplo-redundancia-pasiva"><span class="header-section-number">10.7.0.3</span> Ejemplo: Redundancia pasiva</h4>
+<ul>
+<li><em>Montaje serie-paralelo</em></li>
+</ul>
+<p>Tiene la misma forma que el primer sistema considerado en el apartado anterior, con la diferencia de que en este sistema, las componentes paralelas no están todas en activo al mismo tiempo. Es decir consideramos redundancia pasiva en cada componente. El tiempo de vida del sistema viene dado en este caso por la siguiente expresión <span class="math display">\[
+\tau_1=\min\{T_{11}+T_{21}+\dotsc+T_{p1}, T_{12}+T_{22}+\dotsc+T_{p2},\dotsc,T_{1n}+T_{2n}+\dotsc+T_{pn}\}.
+\]</span></p>
+<ul>
+<li><em>Montaje paralelo-serie</em></li>
+</ul>
+<p>La forma es la misma que en el anterior montaje paralelo-serie, con la diferencia de que las <span class="math inline">\(p\)</span> componentes en paralelo no están activadas al mismo tiempo, se disponen según redundancia pasiva. Ahora el tiempo de vida del sistema es <span class="math display">\[
+\tau_2=\min\{T_{11},\dotsc,T_{1n}\}+\min\{T_{21},\dotsc,T_{2n}\}+\dotsc+\min\{T_{p1},\dotsc,T_{pn}\}.
+\]</span></p>
+<p>También en este caso es fácil comprobar que <span class="math inline">\(\tau_2\leq\tau_1\)</span>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./app.html" class="pagination-link" aria-label="Aplicación Estadística Descriptiva e Inferencia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./reliability_app.html" class="pagination-link" aria-label="Aplicación de fiabilidad">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Click and Learn">
 
-<title>Teaching materials - 3&nbsp; Regresion and correlation</title>
+<title>Click &amp; Learn - 4&nbsp; Regresión y correlación</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./confidenceIntervals.html" rel="next">
-<link href="./Descriptiva_EN.html" rel="prev">
+<link href="./IC.html" rel="next">
+<link href="./Descriptiva.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,17 +56,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -107,11 +108,11 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva_EN.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./tema4.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regresion and correlation</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva.html">Estadística Descriptiva e Inferencia</a></li><li class="breadcrumb-item"><a href="./RegresionCorrelacion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -125,12 +126,12 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Teaching materials</a> 
+      <a href="./">Click &amp; Learn</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -138,52 +139,64 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conjunto de datos de prueba</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Descriptive Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Estadística Descriptiva e Inferencia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Descriptiva_EN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+  <a href="./Descriptiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estadística descriptiva</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tema4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regresion and correlation</span></span></a>
+  <a href="./RegresionCorrelacion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./confidenceIntervals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Confidence intervals</span></span></a>
+  <a href="./IC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hypothesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hypothesis testing</span></span></a>
+  <a href="./Contrastes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Contrastes de hipótesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ejemplo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis datos: Steel Plates Faults</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ayuda_Shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ayuda para las aplicaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Statistics Application</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></span></a>
   </div>
 </li>
       </ul>
@@ -191,40 +204,28 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Reliability</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Fiabilidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./failureRate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Failure rate</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./systemReliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System reliability</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coherentSystems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coherent systems</span></span></a>
+  <a href="./Fiabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reliability_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reliability application</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./redundancy_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redundancy application</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Aplicación de redundancia</span></span></a>
   </div>
 </li>
       </ul>
@@ -232,34 +233,16 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Quality Control</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Control de Calidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./toleranceLimits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Tolerance limits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./controlCharts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control charts</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./operatingCharacteristicCurve.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Operate characterisctic curve</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./qualityControl_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Quality control application</span></span></a>
+  <a href="./Calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></span></a>
   </div>
 </li>
       </ul>
@@ -271,29 +254,36 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#concepto-de-regresión" id="toc-concepto-de-regresión" class="nav-link active" data-scroll-target="#concepto-de-regresión"><span class="header-section-number">3.1</span> Concepto de regresión</a></li>
-  <li><a href="#covarianza" id="toc-covarianza" class="nav-link" data-scroll-target="#covarianza"><span class="header-section-number">3.2</span> Covarianza</a></li>
-  <li><a href="#recta-de-regresión-mínimo-cuadrática" id="toc-recta-de-regresión-mínimo-cuadrática" class="nav-link" data-scroll-target="#recta-de-regresión-mínimo-cuadrática"><span class="header-section-number">3.3</span> Recta de regresión mínimo-cuadrática</a></li>
-  <li><a href="#coeficiente-de-correlación-lineal" id="toc-coeficiente-de-correlación-lineal" class="nav-link" data-scroll-target="#coeficiente-de-correlación-lineal"><span class="header-section-number">3.4</span> Coeficiente de correlación lineal</a></li>
-  <li><a href="#coeficiente-de-determinación-y-varianza-residual" id="toc-coeficiente-de-determinación-y-varianza-residual" class="nav-link" data-scroll-target="#coeficiente-de-determinación-y-varianza-residual"><span class="header-section-number">3.5</span> Coeficiente de determinación y varianza residual</a></li>
+  <li><a href="#concepto-de-regresión" id="toc-concepto-de-regresión" class="nav-link active" data-scroll-target="#concepto-de-regresión"><span class="header-section-number">4.1</span> Concepto de regresión</a></li>
+  <li><a href="#covarianza" id="toc-covarianza" class="nav-link" data-scroll-target="#covarianza"><span class="header-section-number">4.2</span> Covarianza</a></li>
+  <li><a href="#coeficiente-de-correlación-lineal" id="toc-coeficiente-de-correlación-lineal" class="nav-link" data-scroll-target="#coeficiente-de-correlación-lineal"><span class="header-section-number">4.3</span> Coeficiente de correlación lineal</a></li>
+  <li><a href="#recta-de-regresión-mínimo-cuadrática" id="toc-recta-de-regresión-mínimo-cuadrática" class="nav-link" data-scroll-target="#recta-de-regresión-mínimo-cuadrática"><span class="header-section-number">4.4</span> Recta de regresión mínimo-cuadrática</a></li>
+  <li><a href="#coeficiente-de-determinación-y-varianza-residual" id="toc-coeficiente-de-determinación-y-varianza-residual" class="nav-link" data-scroll-target="#coeficiente-de-determinación-y-varianza-residual"><span class="header-section-number">4.5</span> Coeficiente de determinación y varianza residual</a></li>
+  <li><a href="#ejemplo-campo-de-la-ingeniería-de-materiales." id="toc-ejemplo-campo-de-la-ingeniería-de-materiales." class="nav-link" data-scroll-target="#ejemplo-campo-de-la-ingeniería-de-materiales."><span class="header-section-number">4.6</span> Ejemplo: Campo de la ingeniería de materiales.</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva_EN.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./tema4.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regresion and correlation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Descriptiva.html">Estadística Descriptiva e Inferencia</a></li><li class="breadcrumb-item"><a href="./RegresionCorrelacion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regresion and correlation</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Click and Learn </p>
+          </div>
+  </div>
     
   
     
@@ -304,16 +294,20 @@ window.Quarto = {
 </header>
 
 
-<section id="concepto-de-regresión" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="concepto-de-regresión"><span class="header-section-number">3.1</span> Concepto de regresión</h2>
-<p>En muchas situaciones prácticas es frecuente encontrar que existe una cierta dependencia de tipo funcional entre dos variables.</p>
+<section id="concepto-de-regresión" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="concepto-de-regresión"><span class="header-section-number">4.1</span> Concepto de regresión</h2>
+<!--En muchas situaciones prácticas es frecuente encontrar que existe una
+cierta dependencia de tipo funcional entre dos variables.-->
 <p>Dada una distribución bidimensional, uno de los objetivos que se pueden plantear es el de encontrar una función que se ajuste lo mejor posible a las observaciones; gráficamente esto equivale a encontrar una curva que aunque no pase por todos los puntos del diagrama de dispersión esté lo más próxima posible de dichos puntos. Un segundo objetivo será medir el grado de ajuste entre la función teórica y la nube de puntos.</p>
-<p><strong>Regresión</strong>: Consideramos <span class="math inline">\(n\)</span> observaciones que son pares de valores del tipo <span class="math inline">\(\left(x_i,y_j\right)\)</span>. Si tomamos como variable independiente a <span class="math inline">\(X\)</span> y como variable dependiente a <span class="math inline">\(Y\)</span>, debemos de hallar una expresión de <span class="math inline">\(Y\)</span> como función de <span class="math inline">\(X\)</span>. En este caso diremos que estamos realizando una <strong>regresión de <span class="math inline">\(Y\)</span> sobre <span class="math inline">\(X\)</span></strong>. Si tomamos como variable independiente a <span class="math inline">\(Y\)</span> y como variable variable dependiente a <span class="math inline">\(X\)</span>, debemos de hallar una expresión de <span class="math inline">\(X\)</span> como función de <span class="math inline">\(Y\)</span>. En este caso diremos que estamos realizando una <strong>regresión de <span class="math inline">\(X\)</span> sobre <span class="math inline">\(Y\)</span></strong>.</p>
-<p>La función de regresión, <span class="math inline">\(y = f\left(x\right)\)</span>, puede adoptar distintas formas: línea recta, parábola, polinomio de grado n, función exponencial, etc. Todas las posibles funciones de ese tipo tendrán una formulación general que dependerá de unos parámetros y la determinación de dichos parámetros se hará de modo que los valores observados estén próximos a los puntos de la función de regresión. El modo usual de proceder es prefijar el tipo de función que se va a considerar.</p>
-<p>De modo general, consideremos como variable independiente a <span class="math inline">\(X\)</span> y como variable dependiente a <span class="math inline">\(Y\)</span>. Si hemos observado un punto <span class="math inline">\(x_i\)</span>, llamamos <span class="math inline">\(y_j^*\)</span> al valor previsto por la función de regresión, es decir, <span class="math inline">\(y_j^* = f(x_i)\)</span>. Denominaremos <strong>error</strong> o <strong>residuo</strong> y lo denotaremos por <span class="math inline">\(e_{ij}\)</span> a la diferencia entre el valor observado y el valor previsto, es decir: <span class="math display">\[e_{ij} = y_j - y_j^*.\]</span> Lógicamente se desea que los residuos o errores sean lo más pequeños posible. El método que más se utiliza para obtener los parámetros es el de <strong>ajuste por mínimos cuadrados</strong>, que consiste en obtener el valor de los parámetros que hagan mínima la suma de los residuos al cuadrado.</p>
+<p><strong>Regresión</strong>: Consideramos <span class="math inline">\(n\)</span> observaciones que son pares de valores del tipo <span class="math inline">\(\left(x_i,y_j\right)\)</span>. Sea <span class="math inline">\(X\)</span> la variable independiente e <span class="math inline">\(Y\)</span> la variable dependiente. El objetivo es encontrar una expresión de <span class="math inline">\(Y\)</span> como función de <span class="math inline">\(X\)</span>. En este caso se dice que se está realizando una <strong>regresión de <span class="math inline">\(Y\)</span> sobre <span class="math inline">\(X\)</span></strong>. <!--Si tomamos como variable
+independiente a $Y$ y como variable variable dependiente a $X$, debemos
+de hallar una expresión de $X$ como función de $Y$. En este caso diremos
+que estamos realizando una **regresión de $X$ sobre $Y$**.--></p>
+<p>La función de regresión, <span class="math inline">\(y = f\left(x\right)\)</span>, puede adoptar distintas formas: línea recta, parábola, polinomio de grado <span class="math inline">\(p\)</span>, función exponencial, etc. Todas las posibles funciones de ese tipo tendrán una formulación general que dependerá de unos parámetros y la determinación de dichos parámetros se hará de modo que los valores observados estén próximos a los puntos de la función de regresión. El modo usual de proceder es prefijar el tipo de función que se va a considerar.</p>
+<p>De modo general, consideramos como variable independiente a <span class="math inline">\(X\)</span> y como variable dependiente a <span class="math inline">\(Y\)</span>. Si hemos observado un punto <span class="math inline">\(x_i\)</span>, llamamos <span class="math inline">\(y_j^*\)</span> al valor previsto por la función de regresión, es decir, <span class="math inline">\(y_j^* = f(x_i)\)</span>. Se denomina <strong>error</strong> o <strong>residuo</strong> y se denota por <span class="math inline">\(e_{ij}\)</span> a la diferencia entre el valor observado y el valor previsto, es decir: <span class="math display">\[e_{ij} = y_j - y_j^*.\]</span> Lógicamente se desea que los residuos o errores sean lo más pequeños posible. El método que más se utiliza para obtener los parámetros es el de <strong>ajuste por mínimos cuadrados</strong>, que consiste en obtener el valor de los parámetros que hagan mínima la suma de los residuos al cuadrado.</p>
 </section>
-<section id="covarianza" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="covarianza"><span class="header-section-number">3.2</span> Covarianza</h2>
+<section id="covarianza" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="covarianza"><span class="header-section-number">4.2</span> Covarianza</h2>
 <p>La covarianza es una medida de la variabilidad conjunta de las variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Se denota como <span class="math inline">\(\sigma_{xy}\)</span> y cuya expresión viene dada por <span class="math display">\[\sigma_{xy} = \frac{1}{n} \sum_{i=1}^k \sum_{j=1}^p n_{ij} \left(x_i -
     \bar{x}\right)\left(y_j - \bar{y}\right) = \frac{1}{n} \sum_{i=1}^k \sum_{j=1}^p
     n_{ij}x_i y_j - \bar{x}\bar{y}\]</span></p>
@@ -323,29 +317,35 @@ window.Quarto = {
 <li><p>Si <span class="math inline">\(\sigma_{xy}&lt;0\)</span>, entonces las variables varían en sentidos opuestos.</p></li>
 </ol>
 </section>
-<section id="recta-de-regresión-mínimo-cuadrática" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="recta-de-regresión-mínimo-cuadrática"><span class="header-section-number">3.3</span> Recta de regresión mínimo-cuadrática</h2>
+<section id="coeficiente-de-correlación-lineal" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="coeficiente-de-correlación-lineal"><span class="header-section-number">4.3</span> Coeficiente de correlación lineal</h2>
+<p>Antes de predecir usando la recta de regresión, se comprueba si existe una relación lineal y qué tan fuerte es. Para ello, se define el <strong>coeficiente de correlación lineal de Pearson</strong>, y se denota como <span class="math inline">\(r\)</span> a <span class="math display">\[r = \frac{\sigma_{XY}}{\sigma_X \sigma_Y};\quad -1\leq r \leq 1,\]</span> que mide el grado de relación lineal entre las variables.</p>
+<ol type="1">
+<li><p>Si <span class="math inline">\(r=0\)</span>, no existe relación lineal entre las variables.</p></li>
+<li><p>Si <span class="math inline">\(r\)</span> está próximo a 1 o a -1, entonces existe buena relación entre las variables y esa relación es directa o inversa, respectivamente. <img src="images/correlacion_es.png" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Distintas formas de correlación entre las variables." width="600"></p></li>
+</ol>
+</section>
+<section id="recta-de-regresión-mínimo-cuadrática" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="recta-de-regresión-mínimo-cuadrática"><span class="header-section-number">4.4</span> Recta de regresión mínimo-cuadrática</h2>
 <p>Estudiamos el caso más sencillo y de mayor importancia, que es aquel en que la función de regresión es una línea recta.</p>
 <p><strong>Recta de regresión de <span class="math inline">\(Y\)</span> sobre <span class="math inline">\(X\)</span></strong></p>
-<p>La expresión general de una línea recta será del tipo <span class="math inline">\(y = a + bx\)</span>, siendo <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> los parámetros desconocidos.</p>
+<p>La expresión general de una línea recta será del tipo <span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon,\]</span> siendo:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\beta_0\)</span> (<strong>Término constante</strong>): El valor de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X\)</span> es cero.</p></li>
+<li><p><span class="math inline">\(\beta_1\)</span> (<strong>Pendiente</strong>): Cuánto cambia <span class="math inline">\(Y\)</span> por cada unidad que aumenta <span class="math inline">\(X\)</span>.</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> (<strong>Error o residuo</strong>): La diferencia entre el dato real y lo que predice la línea.</p></li>
+</ol>
+<p>La solución que se obtienee para los parámetros por el método de mínimos cuadrados es la siguiente:</p>
 <p><span class="math display">\[\begin{eqnarray}
-\nonumber
-a = &amp; \bar{y} - b\bar{x}\\\nonumber b = &amp; \frac{\sigma_{xy}}{\sigma_x^2}
+    \nonumber
+    \beta_0 = &amp; \bar{Y} - \beta_1\bar{X}\\\nonumber \beta_1 = &amp; \frac{\sigma_{XY}}{\sigma_X^2}
 \end{eqnarray}\]</span></p>
 <p>Una de las aplicaciones de la recta de regresión de <span class="math inline">\(Y\)</span> sobre <span class="math inline">\(X\)</span> es predecir el valor que tendrá la variable <span class="math inline">\(Y\)</span> conocido un valor de <span class="math inline">\(X\)</span>, diferente a los utilizados para construir la recta de regresión.</p>
 </section>
-<section id="coeficiente-de-correlación-lineal" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="coeficiente-de-correlación-lineal"><span class="header-section-number">3.4</span> Coeficiente de correlación lineal</h2>
-<p>Se define el <strong>coeficiente de correlación lineal de Pearson</strong>, y se denota como <span class="math inline">\(r\)</span> a <span class="math display">\[r = \frac{\sigma_{xy}}{\sigma_x \sigma_y};\quad -1\leq r \leq 1,\]</span> que mide el grado de relación lineal entre las variables.</p>
-<ol type="1">
-<li><p>Si <span class="math inline">\(r=0\)</span>, no existe relación lineal entre las variables.</p></li>
-<li><p>Si <span class="math inline">\(r\)</span> está próximo a 1 o a -1, entonces existe buena relación entre las variables y esa relación es directa o inversa, respectivamente.</p></li>
-</ol>
-</section>
-<section id="coeficiente-de-determinación-y-varianza-residual" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="coeficiente-de-determinación-y-varianza-residual"><span class="header-section-number">3.5</span> Coeficiente de determinación y varianza residual</h2>
-<p>Si consideramos el caso de una regresión de <span class="math inline">\(Y\)</span> sobre <span class="math inline">\(X\)</span>, para medir el grado de dependencia funcional entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> puede utilizarse el llamado <strong>coeficiente de determinación</strong>, que denotaremos por <span class="math inline">\(R^2\)</span>, y que se calcula como <span class="math display">\[R^2 = \frac{\sigma_{y^*}^2}{\sigma_y^2} = 1 - \frac{\frac{1}{n}
-\sum_{i=1}^k\sum_{j=1}^p n_{ij} \left(y_j - y_j^*\right)^2}{\sigma_y^2}\]</span> El numerador es la varianza de los valores calculados para cada <span class="math inline">\(x_i\)</span> mediante la función de regresión y el denominador es la varianza de los valores observados para <span class="math inline">\(Y\)</span>. Se demuestra que <span class="math inline">\(R^2\)</span> solo puede tomar valores en el intervalo <span class="math inline">\([0,1]\)</span>. Este coeficiente representa la proporción de la varianza de <span class="math inline">\(Y\)</span> (variabilidad de la variable) que es explicada por la regresión.</p>
+<section id="coeficiente-de-determinación-y-varianza-residual" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="coeficiente-de-determinación-y-varianza-residual"><span class="header-section-number">4.5</span> Coeficiente de determinación y varianza residual</h2>
+<p>Se denota por <span class="math inline">\(R^2\)</span>, y se calcula como <span class="math display">\[R^2 = \frac{\sigma_{Y^*}^2}{\sigma_Y^2} = 1 - \frac{\frac{1}{n}
+\sum_{i=1}^k\sum_{j=1}^p n_{ij} \left(Y_j - Y_j^*\right)^2}{\sigma_Y^2}\]</span> El numerador es la varianza de los valores calculados para cada <span class="math inline">\(x_i\)</span> mediante la función de regresión y el denominador es la varianza de los valores observados para <span class="math inline">\(Y\)</span>. Se demuestra que <span class="math inline">\(R^2\)</span> solo puede tomar valores en el intervalo <span class="math inline">\([0,1]\)</span>. Este coeficiente representa la proporción de la varianza de <span class="math inline">\(Y\)</span> (variabilidad de la variable) que es explicada por la regresión.</p>
 <ol type="1">
 <li><p>Si <span class="math inline">\(R^2 = 1\)</span>, indica que existe una dependencia funcional exacta; todos los puntos observados están sobre la función de regresión obtenida. En este caso, todos los residuos son nulos y el ajuste es perfecto. Y si <span class="math inline">\(R^2\)</span> está próximo a <span class="math inline">\(1\)</span> se puede afirmar que el modelo explica la relación de dependencia entre las variables.</p></li>
 <li><p>Si <span class="math inline">\(R^2 = 0\)</span>, entonces el modelo de regresión considerado no explica nada la varia­bi­li­dad de la variable dependiente. Es el peor caso que se puede encontrar. Y si <span class="math inline">\(R^2\)</span> está próximo a 0 no se puede afirmar que el modelo explique la relación de dependencia entre las variables.</p></li>
@@ -353,6 +353,75 @@ a = &amp; \bar{y} - b\bar{x}\\\nonumber b = &amp; \frac{\sigma_{xy}}{\sigma_x^2}
 <p>Todo lo anterior es válido para el caso de una función de regresión cualquiera, sin importar la forma que adopte.</p>
 <p>En el caso particular de la recta de regresión se demuestra que: <span class="math display">\[R^2 = r^2.\]</span></p>
 <p>Por lo tanto, el coeficiente de correlación lineal al cuadrado, <span class="math inline">\(r^2\)</span>, se utiliza como medida de la bondad del ajuste de la recta de mínimos cuadrados.</p>
+</section>
+<section id="ejemplo-campo-de-la-ingeniería-de-materiales." class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="ejemplo-campo-de-la-ingeniería-de-materiales."><span class="header-section-number">4.6</span> Ejemplo: Campo de la ingeniería de materiales.</h2>
+<p>Queremos estudiar cómo afecta el contenido de agua en una mezcla de hormigón (medido como porcentaje del peso total) a su resistencia a la compresión final (medida en Megapascales, MPa) a los 28 días.</p>
+<p>Hipótesis inicial: En general, a más agua en la mezcla, menos resistente es el hormigón (correlación negativa), porque el exceso de agua crea poros al evaporarse.</p>
+<p>Se han tomado 10 muestras de laboratorio con diferentes contenidos de agua y se ha medido su resistencia:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Contenido de Agua (X, %)</th>
+<th style="text-align: center;">Resistencia a Compresión (Y, MPa)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">5.1</td>
+<td style="text-align: center;">42.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5.6</td>
+<td style="text-align: center;">39.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6.1</td>
+<td style="text-align: center;">37.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6.5</td>
+<td style="text-align: center;">34.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6.9</td>
+<td style="text-align: center;">32.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7.2</td>
+<td style="text-align: center;">30.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7.8</td>
+<td style="text-align: center;">27.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8.3</td>
+<td style="text-align: center;">24.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8.9</td>
+<td style="text-align: center;">21.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9.4</td>
+<td style="text-align: center;">19.1</td>
+</tr>
+</tbody>
+</table>
+<p>El coeficiente de correlación <span class="math inline">\(r = -0.999\)</span>, es una correlación negativa casi perfecta. Las variables tienen una fuerte correlación lineal negativa.</p>
+<p>La recta de regresión que se obtiene con estos datos es la siguiente: <span class="math display">\[ resistencia = 69.66-5.42*agua\]</span></p>
+<p>Interpretación de los coeficientes:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\beta_0 = 69.66\)</span>: Teóricamente, si no hubiera agua (0%), la resistencia sería de 63.36 MPa (un valor no realista, pero necesario para la línea).</p></li>
+<li><p><span class="math inline">\(\beta_1 = -5.42\)</span>: Por cada 1% más de agua, la resistencia baja 5.34 MPa.</p></li>
+</ol>
+<p>Si se calcula el coeficiente de determinación, se obtiene un valor <span class="math inline">\(R^2 = 0.998\)</span>, es decir, el 99.8% de los cambios en la resistencia se explican únicamente por el contenido de agua. El modelo se ajusta muy bien a los datos, tal como se puede ver en la imagen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ejemplo_regresion_es.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Recta de regresión." width="600"></p>
+</figure>
+</div>
 
 
 </section>
@@ -412,12 +481,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -769,13 +838,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Descriptiva_EN.html" class="pagination-link" aria-label="Descriptive Statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
+      <a href="./Descriptiva.html" class="pagination-link" aria-label="Estadística descriptiva">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estadística descriptiva</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./confidenceIntervals.html" class="pagination-link" aria-label="Confidence intervals">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Confidence intervals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./IC.html" class="pagination-link" aria-label="Inferencia estadística: estimación puntual e intervalos de confianza">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

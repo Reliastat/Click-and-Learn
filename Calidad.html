@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Click &amp; Learn - 13&nbsp; Calidad</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./redundancy_app.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Calidad.html">Control de Calidad</a></li><li class="breadcrumb-item"><a href="./Calidad.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Click &amp; Learn</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conjunto de datos de prueba</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Estadística Descriptiva e Inferencia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Descriptiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estadística descriptiva</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RegresionCorrelacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regresión y correlación</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferencia estadística: estimación puntual e intervalos de confianza</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Contrastes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Contrastes de hipótesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ejemplo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis datos: Steel Plates Faults</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ayuda_Shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ayuda para las aplicaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aplicación Estadística Descriptiva e Inferencia</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Fiabilidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Fiabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de estructuras</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reliability_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aplicación de fiabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./redundancy_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Aplicación de redundancia</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Control de Calidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Calidad.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#introducción-al-control-estadístico-de-calidad" id="toc-introducción-al-control-estadístico-de-calidad" class="nav-link active" data-scroll-target="#introducción-al-control-estadístico-de-calidad"><span class="header-section-number">13.1</span> Introducción al Control Estadístico de Calidad</a>
+  <ul class="collapse">
+  <li><a href="#origen-del-control-de-calidad" id="toc-origen-del-control-de-calidad" class="nav-link" data-scroll-target="#origen-del-control-de-calidad"><span class="header-section-number">13.1.1</span> Origen del control de calidad</a></li>
+  <li><a href="#limitaciones-de-la-inspección" id="toc-limitaciones-de-la-inspección" class="nav-link" data-scroll-target="#limitaciones-de-la-inspección"><span class="header-section-number">13.1.2</span> Limitaciones de la inspección</a></li>
+  <li><a href="#control-de-la-producción-intermedia" id="toc-control-de-la-producción-intermedia" class="nav-link" data-scroll-target="#control-de-la-producción-intermedia"><span class="header-section-number">13.1.3</span> Control de la producción intermedia</a></li>
+  <li><a href="#diseño-del-producto" id="toc-diseño-del-producto" class="nav-link" data-scroll-target="#diseño-del-producto"><span class="header-section-number">13.1.4</span> Diseño del producto</a></li>
+  </ul></li>
+  <li><a href="#control-estadístico-de-procesos" id="toc-control-estadístico-de-procesos" class="nav-link" data-scroll-target="#control-estadístico-de-procesos"><span class="header-section-number">13.2</span> Control estadístico de procesos</a></li>
+  <li><a href="#gráficos-de-control" id="toc-gráficos-de-control" class="nav-link" data-scroll-target="#gráficos-de-control"><span class="header-section-number">13.3</span> Gráficos de control</a>
+  <ul class="collapse">
+  <li><a href="#interpretación-de-los-gráficos-de-control" id="toc-interpretación-de-los-gráficos-de-control" class="nav-link" data-scroll-target="#interpretación-de-los-gráficos-de-control"><span class="header-section-number">13.3.1</span> Interpretación de los gráficos de control</a></li>
+  <li><a href="#tipos-de-gráficos-de-control" id="toc-tipos-de-gráficos-de-control" class="nav-link" data-scroll-target="#tipos-de-gráficos-de-control"><span class="header-section-number">13.3.2</span> Tipos de gráficos de control</a></li>
+  </ul></li>
+  <li><a href="#gráficos-de-control-por-atributos" id="toc-gráficos-de-control-por-atributos" class="nav-link" data-scroll-target="#gráficos-de-control-por-atributos"><span class="header-section-number">13.4</span> Gráficos de control por atributos</a>
+  <ul class="collapse">
+  <li><a href="#cálculo-de-los-límites-en-los-gráficos-de-control-por-atributos" id="toc-cálculo-de-los-límites-en-los-gráficos-de-control-por-atributos" class="nav-link" data-scroll-target="#cálculo-de-los-límites-en-los-gráficos-de-control-por-atributos"><span class="header-section-number">13.4.1</span> Cálculo de los límites en los gráficos de control por atributos</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">13.4.2</span> Ejemplo</a></li>
+  </ul></li>
+  <li><a href="#gráficos-de-control-por-variables" id="toc-gráficos-de-control-por-variables" class="nav-link" data-scroll-target="#gráficos-de-control-por-variables"><span class="header-section-number">13.5</span> Gráficos de control por variables</a>
+  <ul class="collapse">
+  <li><a href="#cálculo-de-los-límites-en-los-gráficos-de-control-por-variables" id="toc-cálculo-de-los-límites-en-los-gráficos-de-control-por-variables" class="nav-link" data-scroll-target="#cálculo-de-los-límites-en-los-gráficos-de-control-por-variables"><span class="header-section-number">13.5.1</span> Cálculo de los límites en los gráficos de control por variables</a></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1"><span class="header-section-number">13.5.2</span> Ejemplo</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-aplicado" id="toc-ejemplo-aplicado" class="nav-link" data-scroll-target="#ejemplo-aplicado"><span class="header-section-number">13.6</span> Ejemplo aplicado</a>
+  <ul class="collapse">
+  <li><a href="#datos-de-ejemplo" id="toc-datos-de-ejemplo" class="nav-link" data-scroll-target="#datos-de-ejemplo"><span class="header-section-number">13.6.1</span> Datos de Ejemplo</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Calidad.html">Control de Calidad</a></li><li class="breadcrumb-item"><a href="./Calidad.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Calidad</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción-al-control-estadístico-de-calidad" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="introducción-al-control-estadístico-de-calidad"><span class="header-section-number">13.1</span> Introducción al Control Estadístico de Calidad</h2>
+<section id="origen-del-control-de-calidad" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="origen-del-control-de-calidad"><span class="header-section-number">13.1.1</span> Origen del control de calidad</h3>
+<p>La primera etapa del <strong>control de calidad</strong> se basa en la inspección del producto acabado. En esta fase el objetivo principal es detectar productos defectuosos una vez finalizada su fabricación, es decir, en esta etapa <strong>Calidad = Inspección</strong>.</p>
+</section>
+<section id="limitaciones-de-la-inspección" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="limitaciones-de-la-inspección"><span class="header-section-number">13.1.2</span> Limitaciones de la inspección</h3>
+<p>La <strong>inspección total</strong> de la producción presenta importantes inconvenientes, principalmente debido a su inviabilidad en términos de coste, tiempo y recursos. La inviabilidad de inspeccionar el 100% de la producción hace imprescindible el uso de métodos estadísticos.</p>
+<p>Desde este enfoque inicial, calidad es sinónimo de cumplir las especificaciones.</p>
+</section>
+<section id="control-de-la-producción-intermedia" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="control-de-la-producción-intermedia"><span class="header-section-number">13.1.3</span> Control de la producción intermedia</h3>
+<p>Cuando un producto es muy complejo resulta muy costoso esperar hasta que esté terminado para comprobar si es o no aceptable. La inspección a lo largo del proceso es lo que se conoce como <strong>Control estadístico de procesos</strong>, teniendo como objetivo principal minimizar los costes de la inspección.</p>
+<p>En esta etapa, calidad es sinónimo de reducir la variabilidad.</p>
+</section>
+<section id="diseño-del-producto" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="diseño-del-producto"><span class="header-section-number">13.1.4</span> Diseño del producto</h3>
+<p>Las mejoras no se obtienen sólo por el avance tecnológico, si no como consecuencia de realizar pruebas sistemáticas y comparar resultados. La calidad no sólo se controla, si no que se diseña y se crea. En esta etapa, calidad es sinónimo de mejora. El diseño de experimentos y la extracción de conclusiones se conoce como <strong>Diseño Estadístico de Experimentos</strong>.</p>
+</section>
+</section>
+<section id="control-estadístico-de-procesos" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="control-estadístico-de-procesos"><span class="header-section-number">13.2</span> Control estadístico de procesos</h2>
+<p>Un proceso industrial está sometido a una serie de factores de carácter aleatorio que hacen imposible fabricar dos productos exactamente iguales. Las características del producto fabricado no son uniformes y presentan una variabilidad. Esta variabilidad es claramente indeseable y el objetivo ha de ser reducirla lo más posible o al menos mantenerla dentro de unos límites. Dado que su aplicación es en el momento de la fabricación, puede decirse que esta herramienta contribuye a la mejora de la calidad de la fabricación.</p>
+<p>El control estadístico de procesos es la única técnica estadística aplicable durante la fabricación. Permite también aumentar el conocimiento del proceso, lo cual en algunos casos puede dar lugar a la mejora del mismo.</p>
+<p>Cuando el proceso trabaja afectado solamente por un sistema constante de variables aleatorias no controlables (causas no asignables) se dice que está funcionando bajo <strong>control estadístico</strong>.</p>
+<p>Cuando, además de las causas no asignables, aparece una o varias causas asignables, se dice que el proceso está <strong>fuera de control</strong>.</p>
+<p>El control estadístico de procesos se basa en analizar la información aportada por el proceso para descubrir cuándo están actuando causas asignables para así eliminarlas del proceso. Habitualmente se realiza mediante <strong>gráficos de control</strong>. Estos se basan en la idea de que si el proceso se encuentra bajo control estadístico es posible realizar una predicción del intervalo en el que se encontrarán las características de la pieza fabricada.</p>
+</section>
+<section id="gráficos-de-control" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="gráficos-de-control"><span class="header-section-number">13.3</span> Gráficos de control</h2>
+<p>Básicamente, un gráfico de control o carta de control es un gráfico en el cual se representan los valores de algún tipo de medición realizada durante el funcionamiento de un proceso continuo, y que sirve para controlar dicho proceso.</p>
+<p>En el siguiente gráfico se observa una línea quebrada que muestra las fluctuaciones de una característica a lo largo del tiempo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/grafico2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Gráfico de control." width="600"></p>
+</figure>
+</div>
+<p>Esta es la fluctuación esperable y natural del proceso. Los valores se mueven alrededor de un valor central (el promedio de los datos), la mayor parte del tiempo cerca del mismo. En algún momento puede ocurrir que aparezca uno o más valores demasiado alejados del promedio y habrá que distinguir si es una fluctuación natural o es porque el proceso ya no está funcionando bien.</p>
+<p>La selección de los límites de control equivale a determinar la región crítica para probar la hipótesis nula <span class="math inline">\(H_0\)</span> de que el proceso está bajo control estadístico. Alejando dichos límites de la línea central se reduce <span class="math inline">\(\alpha\)</span> (o probabilidad de cometer un error de tipo I: que un punto caiga fuera de los límites de control sin que haya una causa especial), si bien también se eleva con ello <span class="math inline">\(\beta\)</span> (o riesgo de cometer un error tipo II: que un punto caiga entre dichos límites cuando el proceso se encuentra en realidad fuera de control). El uso de límites de control más estrechos hacen que el diagrama de control sea más sensible a pequeños cambios, pero ello también hace aumentar la probabilidad de que se produzcan falsas alarmas de proceso fuera de control (error de tipo II).</p>
+<section id="interpretación-de-los-gráficos-de-control" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="interpretación-de-los-gráficos-de-control"><span class="header-section-number">13.3.1</span> Interpretación de los gráficos de control</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/imagen1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Distintas zonas en el gráfico de control." width="600"></p>
+</figure>
+</div>
+<p>El proceso está fuera de control cuando existen:</p>
+<ol type="1">
+<li>Puntos fuera de los límites.</li>
+<li>Tendencias o rachas: (Regla del 7): 7 puntos sucesivos a un lado u otro de la línea central del gráfico (racha).</li>
+<li>Patrones no aleatorios: (Periodicidades, inestabilidad, sobrestabilidad):</li>
+</ol>
+<ul>
+<li>Patrón 1: Un punto fuera de las líneas de control.</li>
+<li>Patrón 2: 2 de 3 puntos consecutivos dentro de la zona A.</li>
+<li>Patrón 3: 4 de 5 puntos consecutivos en la zona A o B.</li>
+<li>Patrón 4: 7 puntos consecutivos en la misma mitad del gráfico.</li>
+<li>Patrón 5: 15 puntos consecutivos en las zonas C.</li>
+<li>Patrón 6: 8 puntos seguidos sin caer en la zona C.</li>
+<li>Patrón 7: 14 puntos seguidos alternativos.</li>
+<li>Patrón 8: 7 puntos seguidos creciendo o decreciendo.</li>
+</ul>
+</section>
+<section id="tipos-de-gráficos-de-control" class="level3" data-number="13.3.2">
+<h3 data-number="13.3.2" class="anchored" data-anchor-id="tipos-de-gráficos-de-control"><span class="header-section-number">13.3.2</span> Tipos de gráficos de control</h3>
+<p>Los gráficos de control se clasifican en dos tipos:</p>
+<ol type="1">
+<li><p><strong>Gráficos de control de Variables</strong>: La característica de calidad puede medirse y expresarse como un número. La característica de calidad se describe con una medida de tendencia central y una medida de dispersión. Es necesario mantener el control sobre ambas medidas.</p></li>
+<li><p><strong>Gráficos de control de Atributos</strong>: Juzgaremos si una unidad de producto es o no conforme si posee ciertos atributos o contando el número de defectos que aparecen en cada unidad de producto.</p></li>
+</ol>
+</section>
+</section>
+<section id="gráficos-de-control-por-atributos" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="gráficos-de-control-por-atributos"><span class="header-section-number">13.4</span> Gráficos de control por atributos</h2>
+<p>Se tienen los siguientes:</p>
+<ol type="1">
+<li><p><strong>Gráfico P</strong>: Mide el porcentaje de unidades defectuosas en la producción.</p></li>
+<li><p><strong>Gráfico NP</strong>: Mide el número de unidades defectuosas en la producción.</p></li>
+<li><p><strong>Gráfico U</strong>: Mide el número de defectos por unidad producida.</p></li>
+<li><p><strong>Gráfico C</strong>: Mide el número de defectos de todas las unidades producidas.</p></li>
+</ol>
+<ul>
+<li><p>Los gráficos P y NP se basan en el modelo probabilístico binomial:</p>
+<ul>
+<li>El proceso de producción funciona de manera estable.</li>
+<li>La probabilidad de que cualquier artículo no esté conforme con las especificaciones es <span class="math inline">\(p\)</span>.</li>
+<li>Los artículos producidos sucesivamente son independientes.</li>
+<li>Seleccionamos <span class="math inline">\(k\)</span> muestras aleatorias de <span class="math inline">\(n\)</span> artículos del producto cada una.</li>
+</ul></li>
+<li><p>A veces, el interés no reside en el número de artículos defectuosos sino en el número de defectos en un artículo o unidad de medida o, en general, el número de sucesos o atributos observados por unidad de medida: Un gráfico C es un gráfico de control del número total de defectos y un gráfico U es un gráfico de control del número de defectos por unidad de inspección producida. Esta variable que se quiere controlar puede definirse como: número de sucesos en un intervalo de longitud fija y se basan en el modelo de Poisson:</p>
+<ul>
+<li>El proceso es estable</li>
+<li>Los sucesos ocurren de forma independiente</li>
+</ul></li>
+</ul>
+<section id="cálculo-de-los-límites-en-los-gráficos-de-control-por-atributos" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="cálculo-de-los-límites-en-los-gráficos-de-control-por-atributos"><span class="header-section-number">13.4.1</span> Cálculo de los límites en los gráficos de control por atributos</h3>
+<p>Los límites de cada gráfico se calculan de la siguiente forma:</p>
+<ol type="1">
+<li><p>Límite superior de control: <span class="math inline">\(LSC=\mu + 3\sigma\)</span></p></li>
+<li><p>Límite inferior de control: <span class="math inline">\(LIC= \mu -3\sigma\)</span></p></li>
+<li><p>Línea Central: <span class="math inline">\(LC\)</span>= Promedio de la característica de interés.</p></li>
+</ol>
+<p>donde <span class="math inline">\(\mu\)</span> es la media de la característica de interés y <span class="math inline">\(\sigma\)</span> la desviación típica.</p>
+<section id="gráfico-np" class="level4" data-number="13.4.1.1">
+<h4 data-number="13.4.1.1" class="anchored" data-anchor-id="gráfico-np"><span class="header-section-number">13.4.1.1</span> Gráfico NP</h4>
+<p>Sea <span class="math inline">\(X_i\)</span> el número de artículos defectuosos en la muestra <span class="math inline">\(i\)</span>-ésima, entonces <span class="math inline">\(X_i \rightarrow B(n,p)\)</span> con media <span class="math inline">\(\mu=np\)</span> y varianza <span class="math inline">\(\sigma^2=np(1-p)\)</span>. Sustituyendo se obtienen los siguientes límites de control:</p>
+<p><span class="math display">\[LC = np \quad \quad
+LSC = np + 3\sqrt{np(1-p)} \quad \quad
+LIC = np - 3\sqrt{np(1-p)}\]</span> #### Gráfico P</p>
+<p>Sea <span class="math inline">\(p_i\)</span> el porcentaje de artículos defectuosos en la muestra <span class="math inline">\(i\)</span>-ésima, <span class="math inline">\(p_i = \frac{X_i}{n} \rightarrow B(n,p)\)</span>, con lo que sustituyendo:</p>
+<p><span class="math display">\[LC = p \quad \quad
+LSC = p + 3\sqrt{\frac{p(1-p)}{n}} \quad \quad
+LIC = p - 3\sqrt{\frac{p(1-p)}{n}}\]</span> Si <span class="math inline">\(p\)</span> es desconocida, se estima a partir de las <span class="math inline">\(k\)</span> muestras obtenidas, tomadas cuando se considera que el proceso está bajo control.</p>
+</section>
+<section id="gráfico-c" class="level4" data-number="13.4.1.2">
+<h4 data-number="13.4.1.2" class="anchored" data-anchor-id="gráfico-c"><span class="header-section-number">13.4.1.2</span> Gráfico C</h4>
+<p>Sea <span class="math inline">\(X_i\)</span> el número de defectos en un intervalo de longitud fija en la muestra <span class="math inline">\(i\)</span>-ésima, entonces <span class="math inline">\(X_i \rightarrow Poisson(\lambda)\)</span>, con media <span class="math inline">\(\mu=\lambda\)</span> y varianza <span class="math inline">\(\sigma^2 = \lambda\)</span>. Los límites de control quedan de la siguiente forma: <span class="math display">\[LC = \lambda \quad \quad
+LSC = \lambda + 3\sqrt{\lambda} \quad \quad
+LIC = \lambda - 3\sqrt{\lambda}\]</span><br>
+</p>
+</section>
+<section id="gráfico-u" class="level4" data-number="13.4.1.3">
+<h4 data-number="13.4.1.3" class="anchored" data-anchor-id="gráfico-u"><span class="header-section-number">13.4.1.3</span> Gráfico U</h4>
+<p>Si <span class="math inline">\(c_i\)</span> es el número de defectos en la muestra <span class="math inline">\(i\)</span>-ésima y <span class="math inline">\(n_i\)</span> el número de unidades de medida analizadas, entonces el número de defectos por unidad de medida será <span class="math inline">\(u_i=c_i/n_i \rightarrow Poisson(\lambda*n_i/n_i)=Poisson(\lambda)\)</span>, siendo los límites de control: <span class="math display">\[LC = \lambda \quad \quad
+LSC = \lambda + 3\sqrt{\lambda} \quad \quad
+LIC = \lambda - 3\sqrt{\lambda}\]</span> Si <span class="math inline">\(\lambda\)</span> es desconocida, se estima a partir de las <span class="math inline">\(k\)</span> muestras obtenidas, tomadas cuando se considera que el proceso está bajo control.</p>
+</section>
+</section>
+<section id="ejemplo" class="level3" data-number="13.4.2">
+<h3 data-number="13.4.2" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">13.4.2</span> Ejemplo</h3>
+<p>El siguiente gráfico representa un gráfico P construido bajo el supuesto de que los datos provienen de una distribución binomial con el parámetro <span class="math inline">\(p\)</span> estimado en base a los datos. Se observa que hay dos puntos que se encuetran fuera de los límites de control, por lo que habrá que estudiar qué ha ocurrido en el proceso con estas dos observaciones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/grafp_es.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-cap="Gráfico P." width="600"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="gráficos-de-control-por-variables" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="gráficos-de-control-por-variables"><span class="header-section-number">13.5</span> Gráficos de control por variables</h2>
+<p>Se tienen los siguientes:</p>
+<ol type="1">
+<li><p><strong>Gráfico X</strong>: Gráfico de control para la media.</p></li>
+<li><p><strong>Gráfico S</strong>: Gráficos de control para la desviación típica.</p></li>
+<li><p><strong>Gráfico R</strong>: Gráfico de control para el rango.</p></li>
+</ol>
+<p>Se basan en la distribución Normal: * Se parte de <span class="math inline">\(k\)</span> muestras. * Se calcula la media y la varianza de cada muestra. * Se calcula la media total, que es un estimador insesgado de la media poblacional * Se calcula un estimador insesgado de la desviación típica poblacional</p>
+<section id="cálculo-de-los-límites-en-los-gráficos-de-control-por-variables" class="level3" data-number="13.5.1">
+<h3 data-number="13.5.1" class="anchored" data-anchor-id="cálculo-de-los-límites-en-los-gráficos-de-control-por-variables"><span class="header-section-number">13.5.1</span> Cálculo de los límites en los gráficos de control por variables</h3>
+<p>Se tienen los siguientes límites teóricos:</p>
+<section id="gráfico-x" class="level4" data-number="13.5.1.1">
+<h4 data-number="13.5.1.1" class="anchored" data-anchor-id="gráfico-x"><span class="header-section-number">13.5.1.1</span> Gráfico X</h4>
+<p>La media <span class="math inline">\(\bar{X} \rightarrow \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)\)</span>, con lo que:</p>
+<p><span class="math display">\[LC = \hat{\mu} \quad \quad
+LSC = \hat{\mu}+\frac{\hat{\sigma}^2}{\sqrt{n}} \quad \quad
+LIC = \hat{\mu}-\frac{\hat{\sigma}^2}{\sqrt{n}}\]</span> donde <span class="math inline">\(\hat{\mu}\)</span> es la estimación de la media y <span class="math inline">\(\hat{\sigma}\)</span> la estimación de la desviación típica, que puede realizarse con la desviación muestral o con el rango.</p>
+</section>
+<section id="gráfico-s" class="level4" data-number="13.5.1.2">
+<h4 data-number="13.5.1.2" class="anchored" data-anchor-id="gráfico-s"><span class="header-section-number">13.5.1.2</span> Gráfico S</h4>
+<p>Se calcula estimando la esperanza de la desviación típica <span class="math inline">\(E[S]\)</span> y su varianza <span class="math inline">\(Var[S]\)</span>, en base a valores y coeficientes que se encuentran tabulados, siendo los límites teóricos:</p>
+<p><span class="math display">\[LC = E[S] \quad \quad
+LSC = E[S]+3\sqrt{Var[S]} \quad \quad
+LIC = E[S]-3\sqrt{Var[S]}\]</span></p>
+</section>
+<section id="gráfico-r" class="level4" data-number="13.5.1.3">
+<h4 data-number="13.5.1.3" class="anchored" data-anchor-id="gráfico-r"><span class="header-section-number">13.5.1.3</span> Gráfico R</h4>
+<p>De igual forma que con el gráfico <span class="math inline">\(S\)</span> se estima la esperanza del rango <span class="math inline">\(E[R]\)</span> y su varianza <span class="math inline">\(Var[R]\)</span> en base a coeficientes tabulados, siendo los límites teóricos: <span class="math display">\[LC = E[R] \quad \quad
+LSC = E[R]+3\sqrt{Var[R]} \quad \quad
+LIC = E[R]-3\sqrt{Var[R]}\]</span></p>
+</section>
+</section>
+<section id="ejemplo-1" class="level3" data-number="13.5.2">
+<h3 data-number="13.5.2" class="anchored" data-anchor-id="ejemplo-1"><span class="header-section-number">13.5.2</span> Ejemplo</h3>
+<p>El siguiente gráfico representa un gráfico X para la media, construido bajo el supuesto de normalidad con media y desviaciones típicas estimadas a partir de los datos. En este caso, como todos los puntos están dentro de los límites de control, el proceso estaría bajo control. <img src="images/grafx.jpg" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Gráfico X." width="600"></p>
+<p>En el gráfico R se acompaña el correspondiente gráfico para la dispersión basado en el rango, donde también el proceso se encontraría bajo control. <img src="images/grafr.png" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Gráfico R." width="600"></p>
+</section>
+</section>
+<section id="ejemplo-aplicado" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="ejemplo-aplicado"><span class="header-section-number">13.6</span> Ejemplo aplicado</h2>
+<p>El procedimiento Gráfico P crea un gráfico de control para datos que describe la proporción de veces que ocurre un evento en <span class="math inline">\(m\)</span> muestras tomadas de un producto o proceso. Los datos podrían representar la proporción de artículos defectuosos en un proceso de manufactura, la proporción de clientes que regresan un producto, o cualquier otro atributo que pueda ser clasificado como aceptable o inaceptable. Se resaltan las señales de fuera-de-control, incluyendo tanto puntos más allá de los límites de control como cualquier secuencia atípica en los datos. El gráfico puede construirse en modo de Estudio Inicial (Fase 1), donde los datos mismos determinan los límites de control, o en modo de Control a Estándar (Fase 2), donde los límites provienen de un estándar conocido o de datos previos.</p>
+<p>Los datos para el estudio consisten de <span class="math inline">\(m\)</span> muestras de una población:</p>
+<ul>
+<li><p><span class="math inline">\(n_j =\)</span> número de elementos en la muestra <span class="math inline">\(j\)</span></p></li>
+<li><p><span class="math inline">\(d_j =\)</span> número de elementos no aceptables en la muestra <span class="math inline">\(j\)</span></p></li>
+</ul>
+<section id="datos-de-ejemplo" class="level3" data-number="13.6.1">
+<h3 data-number="13.6.1" class="anchored" data-anchor-id="datos-de-ejemplo"><span class="header-section-number">13.6.1</span> Datos de Ejemplo</h3>
+<p>El archivo <em>cans.xlsx</em> contiene resultados de la inspección de <span class="math inline">\(m = 94\)</span> muestras tomadas de un proceso de manufactura, cada una corresponde a <span class="math inline">\(n = 50\)</span> envases de cartón de jugo de naranja. Los datos son presentados por Montgomery (2005). Se inspeccionó cada envase y se tabuló el número de envases defectuosos.</p>
+<p>Las primeras <span class="math inline">\(m = 30\)</span> muestras se tomaron antes de un ajuste a la máquina. Las siguientes <span class="math inline">\(24\)</span> muestras se emplearon para establecer los límites de control para el proceso. Las <span class="math inline">\(40\)</span> muestras finales se graficaron usando los límites de control establecidos.</p>
+<p>El Gráfico <span class="math inline">\(P\)</span> contiene las proporciones muestrales <span class="math inline">\(p_i\)</span>. <img src="images/grafp_es.png" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Gráfico P para defectos/n." width="600"></p>
+<p>En el gráfico se muestran los siguientes límites de control:</p>
+<ul>
+<li>Límite superior de control (LSC) = 0.4102</li>
+<li>Línea central (LC) = 0.2313</li>
+<li>Límite inferior de control (LIC) = 0.0524</li>
+</ul>
+<p>El eje horizontal representa la muestra y el eje vertical la proporción <span class="math inline">\(p\)</span> de defectos.</p>
+<p>En el modo Fase 1 (Estudios Iniciales), la línea central y los límites de control se determinan a partir de los datos.</p>
+<p>Montgomery (2005) reportó que los puntos localizados fuera de control se debieron a:</p>
+<ul>
+<li><p>Muestra 15: nuevo material</p></li>
+<li><p>Muestra 23: nuevo operador</p></li>
+</ul>
+<p>Después de excluir estas dos muestras, la línea central y los límites se recalcularían, quedando el gráfico como se aprecia a continuación. <img src="images/grafp2.png" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Gráfico P para defectos corregido." width="600"></p>
+<p>En la discusión que hace Montgomery (2005) de estos datos, establece que se hizo un ajuste a la máquina después de revisar los resultados anteriores y luego se tomaron unas 24 muestras adicionales.</p>
+<p>Entonces se calcularán diferentes límites de control para las muestras 1-30 y 31-54. Los límites para la última sección se muestran en la siguiente gráfica en la que se observa la mejora. <img src="images/grafp3.png" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Gráfico P para defectos  corregido corregido y ampliado con 24 muestras." width="600"></p>
+<p>A continuación realizamos una prueba de rachas eliminando las observaciones que no cumplan las reglas:</p>
+<p>Pruebas de rachas:</p>
+<p>Reglas:</p>
+<ul>
+<li><ol type="A">
+<li>Secuencias arriba o abajo de la línea central con longitud 8 o mayor.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Secuencias arriba o abajo de longitud 8 o mayor.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>Conjuntos de 5 subgrupos con al menos 4 más allá de 1.0 sigma.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>Conjuntos de 3 subgrupos con al menos 2 más allá de 2.0 sigma.</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>Conjuntos de 15 subgrupos en o dentro de 1.0 sigma.</li>
+</ol></li>
+<li><ol start="6" type="A">
+<li>Conjuntos de 8 subgrupos más allá de 2.0 sigma.</li>
+</ol></li>
+<li><ol start="7" type="A">
+<li>Conjuntos de 8 observaciones alternando arriba y abajo</li>
+</ol></li>
+</ul>
+<p>Violaciones: Observaciones 20 (G), 21 (G), 22 (DG), 23 (DG) y 24 (CG).</p>
+<p>La discusión anterior se ocupa de un estudio Fase 1, en el cual el objetivo fue llevar al proceso a un estado de control estadístico y estimar un valor estándar para la proporción media de elementos defectuosos.Después del ajuste a la máquina, el proceso pareció estabilizarse alrededor de una proporción de p = 0.1108.</p>
+<p>En un estudio Fase 2, se colectan datos adicionales y se grafican con límites de control basados en aquel estándar. Las filas 55-94 del archivo de datos de ejemplo representan tal caso.</p>
+<p>El último gráfico muestra como el proceso ya ha permanecido bajo control durante en periodo en que se recolectaron datos adicionales. <img src="images/grafp4.png" class="img-fluid quarto-figure quarto-figure-center" data-fig-cap="Gráfico P para defectos corregido y usado como estándar." width="600"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./redundancy_app.html" class="pagination-link" aria-label="Aplicación de redundancia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Aplicación de redundancia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
